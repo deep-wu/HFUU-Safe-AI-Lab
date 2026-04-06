@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
     <style>
-        /* --- 核心工程化样式 --- */
+        /* 基础与平滑滚动 */
         html { scroll-behavior: smooth; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -17,15 +17,16 @@
             overflow-x: hidden;
         }
 
+        /* 统一学术蓝 */
         :root { --academic-blue: #003366; --accent-blue: #3498db; }
 
         /* 1. 丝滑导航栏 */
         .navbar {
             background-color: var(--academic-blue);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             transition: all 0.4s ease;
         }
-        .navbar-brand { font-weight: 700; color: #fff !important; }
+        .navbar-brand { font-weight: 700; letter-spacing: 0.5px; color: #fff !important; }
         .nav-link {
             color: rgba(255, 255, 255, 0.75) !important;
             font-weight: 500;
@@ -36,15 +37,18 @@
         .nav-link:hover, .nav-link.active {
             color: #fff !important;
             background-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-1px);
         }
 
-        /* 2. 居中巨幕区 (Hero) */
+        /* 2. 巨幕区 (Hero) - 增加微渐变 */
         .hero-section {
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             padding: 100px 0;
+            position: relative;
         }
+        .hero-section p { font-size: 1.1rem; color: #555; }
 
-        /* 3. 标题与修饰 */
+        /* 3. 标题与通用修饰 */
         .section-title {
             font-weight: 700;
             color: #2c3e50;
@@ -56,14 +60,13 @@
         .section-title::after {
             content: '';
             position: absolute;
-            left: 50%; bottom: 0;
-            width: 50px; height: 4px;
+            left: 0; bottom: 0;
+            width: 40%; height: 4px;
             background-color: var(--accent-blue);
-            transform: translateX(-50%);
             border-radius: 2px;
         }
 
-        /* 4. 卡片浮起特效 */
+        /* 4. 卡片悬停特效 (玻璃拟物化阴影) */
         .card {
             border: none;
             border-radius: 16px;
@@ -74,24 +77,44 @@
             transform: translateY(-8px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08) !important;
         }
+        .icon-box {
+            width: 64px; height: 64px;
+            background: rgba(52, 152, 219, 0.1);
+            color: var(--accent-blue);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 28px;
+            margin: 0 auto 20px;
+        }
 
-        /* 5. 论文项交互 */
+        /* 5. 论文列表交互 */
         .pub-item {
             padding: 15px;
             border-radius: 8px;
-            transition: all 0.3s ease;
             border-left: 4px solid transparent;
+            transition: all 0.3s ease;
         }
         .pub-item:hover {
-            background-color: rgba(52, 152, 219, 0.05);
+            background-color: rgba(52, 152, 219, 0.04);
             border-left: 4px solid var(--accent-blue);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
             transform: translateX(5px);
         }
 
-        /* 6. 进场动画控制 */
+        /* 6. 页脚优化 */
+        footer {
+            background-color: var(--academic-blue);
+            color: rgba(255, 255, 255, 0.8);
+            border-top: 5px solid var(--accent-blue);
+        }
+        footer a { color: var(--accent-blue); transition: color 0.3s; text-decoration: none; }
+        footer a:hover { color: #fff; text-decoration: underline; }
+        footer h3 { color: #fff; font-weight: 600; }
+
+        /* 7. 🚀 进场浮现动画 (大厂高级感来源) */
         .reveal-up {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(40px);
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
         .reveal-up.active {
@@ -99,14 +122,12 @@
             transform: translateY(0);
         }
 
-        /* 页脚 */
-        footer {
-            background-color: var(--academic-blue);
-            color: rgba(255, 255, 255, 0.8);
-            border-top: 4px solid var(--accent-blue);
+        /* 移动端特殊适配 */
+        @media (max-width: 768px) {
+            .hero-section { padding: 60px 0; }
+            .hero-section p { width: 95% !important; text-align: left !important; }
+            .pub-item:hover { transform: none; } /* 手机端取消平移以免误触 */
         }
-        footer a { color: var(--accent-blue); text-decoration: none; }
-        footer a:hover { color: #fff; text-decoration: underline; }
     </style>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="90">
@@ -129,21 +150,21 @@
         </div>
     </nav>
 
-    <header id="page-top" class="hero-section text-center reveal-up">
+<header id="page-top" class="hero-section text-center reveal-up">
         <div class="container">
             <h1 class="display-4 fw-bold text-dark">安全人工智能团队</h1>
             <h2 class="h5 text-secondary mt-3 mb-4 fw-light">Safe Artificial Intelligence Team @ Hefei University</h2>
-            <p class="w-75 mx-auto lh-lg text-secondary">
+            <p class="w-75 mx-auto lh-lg text-start text-md-center">
                 由吴志泽院长指导，依托于合肥大学人工智能与大数据学院。我们致力于推进前沿的深度学习与安全人工智能技术，旨在构建鲁棒、可信、泛化能力强的多模态 AI 系统。团队深耕对抗机器学习、域适应等核心领域，力求在真实的动态视觉场景中，解决模型面临的安全挑战与分布偏移难题。
             </p>
             <a href="#join" class="btn btn-primary btn-lg mt-4 shadow-sm px-5 rounded-pill">加入我们</a>
         </div>
     </header>
 
-    <section id="news" class="container py-5 reveal-up">
-        <h2 class="section-title text-center d-block mx-auto">📌 最新动态 (News)</h2>
+  <section id="news" class="container py-5 reveal-up">
+        <h2 class="section-title">📌 最新动态 (News)</h2>
         
-        <div class="row g-5 align-items-center mb-5 pb-5 border-bottom">
+        <div class="row g-5 align-items-center mb-5 pb-4 border-bottom">
             <div class="col-md-5">
                 <div class="position-relative">
                     <img src="assets/images/nrfp-framework.png" alt="NRFP Framework" class="img-fluid rounded-4 shadow">
@@ -154,12 +175,15 @@
             </div>
             <div class="col-md-7">
                 <h3 class="fw-bold text-dark mb-3">无源域适应领域取得重大突破，论文 NRFP 被 CVPR 2026 录用</h3>
-                <p class="text-secondary lh-lg">
-                    <strong>[2026.03]</strong> 团队最新研究工作 <i>"NRFP: A Noise-Robust Feature Plugin for Source-Free Domain Adaptation"</i> 正式被计算机视觉顶级会议 <strong>CVPR 2026 (CCF-A类)</strong> 录用。该研究创新性地提出了一种即插即用的噪声鲁棒特征插件，通过引入双效机制成功强制模型剥离表面干扰，在多项主流基准测试中全面刷新了 SOTA 性能。
+                <p class="text-secondary lh-lg text-start">
+                    <strong>[2026.03]</strong> 团队最新研究工作 <i>"NRFP: A Noise-Robust Feature Plugin for Source-Free Domain Adaptation"</i> 正式被计算机视觉顶级会议 <strong>CVPR 2026 (CCF-A类)</strong> 录用。该研究聚焦无源域适应（SFDA）中“数据增强诱发噪声”的痛点，创新性地提出了一种即插即用的噪声鲁棒特征插件。通过引入双效机制（AIGC 纯净先验 ASGS 与特征级对抗互斥 MESGS），成功强制模型剥离表面干扰、提取内在语义，在多项主流基准测试中全面刷新了 SOTA 性能。
                 </p>
-                <div class="mt-4">
+                <div class="mt-3">
                     <span class="badge bg-primary-subtle text-primary border border-primary-subtle p-2 px-3 me-2">无源域适应 (SFDA)</span>
                     <span class="badge bg-light text-dark border p-2 px-3">特征提取</span>
+                </div>
+                <div class="mt-4">
+                    <a href="#" class="btn btn-sm btn-primary rounded-pill px-4 me-2 shadow-sm">Project Page</a>
                 </div>
             </div>
         </div>
@@ -175,24 +199,30 @@
             </div>
             <div class="col-md-7">
                 <h3 class="fw-bold text-dark mb-3">安全 AI 领域新进展：面向图卷积骨架动作识别的空间视点转移攻击研究</h3>
-                <p class="text-secondary lh-lg">
-                    <strong>[2026.02]</strong> 团队完成研究论文 <i>"Spatial Viewpoint Shift Attack on Graph Convolutional Skeleton Action Recognition"</i>（目前正在审稿中）。团队提出了一种空间梯度阻尼器与基于视点的约束机制，在保持视觉上合理的骨骼运动的同时，显著增强了对抗样本在不同 GCN 架构间的可迁移性。相关代码已开源。
+                <p class="text-secondary lh-lg text-start">
+                    <strong>[2026.02]</strong> 团队在安全人工智能方向取得最新进展，完成研究论文 <i>"Spatial Viewpoint Shift Attack on Graph Convolutional Skeleton Action Recognition"</i>（目前正在审稿中）。该研究深入探讨了限制基于骨架模型对抗迁移性的架构归纳偏差问题。团队提出了一种空间梯度阻尼器与基于视点的约束机制，在保持视觉上合理的骨骼运动的同时，显著增强了对抗样本在不同 GCN 架构间的可迁移性。相关代码已开源。
                 </p>
+                <div class="mt-3">
+                    <span class="badge bg-danger-subtle text-danger border border-danger-subtle p-2 px-3 me-2">AI 安全</span>
+                    <span class="badge bg-light text-dark border p-2 px-3">图卷积网络 (GCN)</span>
+                    <span class="badge bg-light text-dark border p-2 px-3">对抗攻击</span>
+                </div>
                 <div class="mt-4">
                     <a href="https://github.com/MilkyWay123123/SVAttack" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill px-4">🔗 GitHub Code</a>
                 </div>
             </div>
         </div>
     </section>
+    </section>
 
     <section id="research" class="py-5 bg-light">
         <div class="container reveal-up">
-            <h2 class="section-title text-center d-block mx-auto">🔬 研究方向 (Research)</h2>
+            <h2 class="section-title">🔬 研究方向 (Research)</h2>
             <div class="row g-4 justify-content-center">
                 <div class="col-md-6">
                     <div class="card p-4 h-100 shadow-sm" style="border-top: 4px solid #3498db;">
                         <div class="card-body text-center">
-                            <div class="fs-1 mb-3">🛡️</div>
+                            <div class="icon-box">🛡️</div>
                             <h4 class="card-title fw-bold text-dark mb-3">对抗机器学习</h4>
                             <p class="card-text text-secondary lh-lg text-start">
                                 专注模型在面对对抗样本时的脆弱性。研究黑盒场景下的对抗攻击与防御策略，当前重点为图像领域或骨骼动作识别场景下的安全性评估。
@@ -203,7 +233,7 @@
                 <div class="col-md-6">
                     <div class="card p-4 h-100 shadow-sm" style="border-top: 4px solid #0dcaf0;">
                         <div class="card-body text-center">
-                            <div class="fs-1 mb-3">🌐</div>
+                            <div class="icon-box">🌐</div>
                             <h4 class="card-title fw-bold text-dark mb-3">域适应与域泛化</h4>
                             <p class="card-text text-secondary lh-lg text-start">
                                 提升模型在未知领域和动态环境中的自适应能力。探索跨域数据下的特征对齐，以及应对分布偏移的鲁棒性挑战。
@@ -215,7 +245,7 @@
         </div>
     </section>
 
-    <section id="publications" class="container py-5 reveal-up">
+  <section id="publications" class="container py-5 reveal-up">
         <h2 class="section-title text-center d-block mx-auto">📄 学术成果 (Publications)</h2>
         <div class="mt-4 publication-list">
             
@@ -352,40 +382,40 @@
 
     <section id="team" class="py-5 bg-light">
         <div class="container reveal-up">
-            <h2 class="section-title text-center d-block mx-auto">👨‍🏫 团队成员 (People)</h2>
+            <h2 class="section-title">👨‍🏫 团队成员 (People)</h2>
             
             <h3 class="h5 mt-4 mb-4 fw-bold text-dark">指导教师 (Faculty & Mentors)</h3>
             <div class="row g-4">
                 <div class="col-6 col-md-3">
-                    <div class="card text-center p-4 shadow-sm border-0 h-100">
+                    <div class="card text-center p-4 shadow-sm border-0">
                         <div class="rounded-circle text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 80px; height: 80px; font-size: 1.8rem; background: linear-gradient(135deg, #3498db, #2980b9);">吴</div>
                         <h5 class="fw-bold mb-1">吴志泽</h5>
                         <p class="text-secondary small mb-2">教授 (Professor)</p>
-                        <a href="mailto:wuzz@hfuu.edu.cn" class="text-decoration-none small">wuzz@hfuu.edu.cn</a>
+                        <a href="mailto:wuzz@hfuu.edu.cn" class="text-decoration-none small">Email：wuzz@hfuu.edu.cn</a>
                     </div>
                 </div>
                 <div class="col-6 col-md-3">
-                    <div class="card text-center p-4 shadow-sm border-0 h-100">
+                    <div class="card text-center p-4 shadow-sm border-0">
                         <div class="rounded-circle text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 80px; height: 80px; font-size: 1.8rem; background: linear-gradient(135deg, #3498db, #2980b9);">孙</div>
                         <h5 class="fw-bold mb-1">孙斐</h5>
                         <p class="text-secondary small mb-2">教授 (Professor)</p>
-                        <a href="mailto:sunfei@hfuu.edu.cn" class="text-decoration-none small">sunfei@hfuu.edu.cn</a>
+                        <a href="mailto:sunfei@hfuu.edu.cn" class="text-decoration-none small">Email：sunfei@hfuu.edu.cn</a>
                     </div>
                 </div>
                 <div class="col-6 col-md-3">
-                    <div class="card text-center p-4 shadow-sm border-0 h-100">
+                    <div class="card text-center p-4 shadow-sm border-0">
                         <div class="rounded-circle text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 80px; height: 80px; font-size: 1.8rem; background: linear-gradient(135deg, #3498db, #2980b9);">汪</div>
                         <h5 class="fw-bold mb-1">汪自旺</h5>
                         <p class="text-secondary small mb-2">讲师 (Lecturer)</p>
-                        <a href="mailto:wangzw@hfuu.edu.cn" class="text-decoration-none small">wangzw@hfuu.edu.cn</a>
+                        <a href="mailto:wangzw@hfuu.edu.cn" class="text-decoration-none small">Email：wangzw@hfuu.edu.cn</a>
                     </div>
                 </div>
                 <div class="col-6 col-md-3">
-                    <div class="card text-center p-4 shadow-sm border-0 h-100">
+                    <div class="card text-center p-4 shadow-sm border-0">
                         <div class="rounded-circle text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 80px; height: 80px; font-size: 1.8rem; background: linear-gradient(135deg, #3498db, #2980b9);">蒋</div>
                         <h5 class="fw-bold mb-1">蒋越</h5>
                         <p class="text-secondary small mb-2">讲师 (Lecturer)</p>
-                        <a href="mailto:jiangyue@hfuu.edu.cn" class="text-decoration-none small">jiangyue@hfuu.edu.cn</a>
+                        <a href="mailto:jiangyue@hfuu.edu.cn" class="text-decoration-none small">Email：jiangyue@hfuu.edu.cn</a>
                     </div>
                 </div>
             </div>
@@ -396,34 +426,34 @@
                 
                 <h6 class="text-primary fw-bold mb-3" style="border-left: 3px solid #3498db; padding-left: 10px;">2023级</h6>
                 <div class="d-flex flex-wrap gap-2 mb-4">
-                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill shadow-sm">👨‍🎓 秦世杰</span>
-                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill shadow-sm">👨‍🎓 魏宏伟</span>
-                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill shadow-sm">👩‍🎓 吴莹莹</span>
-                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill shadow-sm">👩‍🎓 张敏</span>
-                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill shadow-sm">👨‍🎓 张韦</span>
-                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill shadow-sm">👨‍🎓 邹焕鑫</span>
+                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill">👨‍🎓 秦世杰</span>
+                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill">👨‍🎓 魏宏伟</span>
+                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill">👩‍🎓 吴莹莹</span>
+                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill">👩‍🎓 张敏</span>
+                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill">👨‍🎓 张韦</span>
+                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill">👨‍🎓 邹焕鑫</span>
                 </div>
 
                 <h6 class="text-primary fw-bold mb-3" style="border-left: 3px solid #3498db; padding-left: 10px;">2024级</h6>
                 <div class="d-flex flex-wrap gap-2 mb-4">
-                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill shadow-sm">👨‍🎓 华善聪</span>
-                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill shadow-sm">👨‍🎓 李鼎</span>
-                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill shadow-sm">👨‍🎓 鹿梦浩</span>
-                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill shadow-sm">👨‍🎓 孟杰</span>
-                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill shadow-sm">👨‍🎓 张亚微</span>
-                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill shadow-sm">👨‍🎓 周基健</span>
+                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill">👨‍🎓 华善聪</span>
+                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill">👨‍🎓 李鼎</span>
+                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill">👨‍🎓 鹿梦浩</span>
+                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill">👨‍🎓 孟杰</span>
+                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill">👨‍🎓 张亚微</span>
+                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill">👨‍🎓 周基健</span>
                 </div>
 
                 <h6 class="text-primary fw-bold mb-3" style="border-left: 3px solid #3498db; padding-left: 10px;">2025级</h6>
                 <div class="d-flex flex-wrap gap-2">
-                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill shadow-sm">👨‍🎓 付余涛</span>
-                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill shadow-sm">👨‍🎓 洪志陈</span>
-                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill shadow-sm">👩‍🎓 荣子怡</span>
-                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill shadow-sm">👨‍🎓 王鹏松</span>
-                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill shadow-sm">👩‍🎓 夏雨萱</span>
-                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill shadow-sm">👨‍🎓 姚俊豪</span>
-                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill shadow-sm">👩‍🎓 尹梦雨</span>
-                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill shadow-sm">👩‍🎓 章佳宜</span>
+                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill">👨‍🎓 付余涛</span>
+                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill">👨‍🎓 洪志陈</span>
+                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill">👩‍🎓 荣子怡</span>
+                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill">👨‍🎓 王鹏松</span>
+                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill">👩‍🎓 夏雨萱</span>
+                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill">👨‍🎓 姚俊豪</span>
+                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill">👩‍🎓 尹梦雨</span>
+                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill">👩‍🎓 章佳宜</span>
                 </div>
             </div>
         </div>
@@ -431,16 +461,16 @@
 
     <footer id="join" class="text-center py-5 reveal-up">
         <div class="container py-4">
-            <h3 class="mb-4 text-white">💡 加入我们 (Join Us)</h3>
-            <p class="col-md-8 mx-auto mb-4 lh-lg text-light opacity-75">
+            <h3 class="mb-4">💡 加入我们 (Join Us)</h3>
+            <p class="col-md-8 mx-auto mb-4 lh-lg">
                 我们常年招收对 <strong>计算机视觉、AI 安全</strong> 充满热忱的研究生。<br>
                 如果你对我们的课题有浓厚的研究兴趣，欢迎将简历发送至导师邮箱。
             </p>
-            <div class="mt-4 mb-5 text-light">
-                <p class="mb-2"><strong>📬 Email:</strong> <a href="mailto:wuzz@hfuu.edu.cn" class="text-info">wuzz@hfuu.edu.cn</a></p>
+            <div class="mt-4 mb-5">
+                <p class="mb-2"><strong>📬 Email:</strong> <a href="mailto:wuzz@hfuu.edu.cn">wuzz@hfuu.edu.cn</a></p>
                 <p class="mb-0"><strong>📍 Location:</strong> 安徽省合肥市蜀山区中德合作创新园7号楼404</p>
             </div>
-            <p class="small mb-0 opacity-50 text-light">&copy; 2026 Safe AI Team, Hefei University. All Rights Reserved.</p>
+            <p class="small mb-0 opacity-50">&copy; 2026 Safe AI Team, Hefei University. All Rights Reserved.</p>
         </div>
     </footer>
 
@@ -488,7 +518,7 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('active');
-                        observer.unobserve(entry.target); 
+                        observer.unobserve(entry.target); // 动画只执行一次
                     }
                 });
             }, { rootMargin: "0px 0px -50px 0px" });
