@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Safe AI Team | 安全人工智能团队</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        /* --- 核心工程化样式 --- */
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #333;
+            padding-top: 76px;
+            background-color: #fcfdfd;
+            overflow-x: hidden;
+        }
+
+        :root { --academic-blue: #003366; --accent-blue: #3498db; }
+
+        /* 1. 丝滑导航栏 */
+        .navbar {
+            background-color: var(--academic-blue);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+        }
+        .navbar-brand { font-weight: 700; color: #fff !important; }
+        .nav-link {
+            color: rgba(255, 255, 255, 0.75) !important;
+            font-weight: 500;
+            margin: 0 4px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: #fff !important;
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+
+        /* 2. 居中巨幕区 (Hero) */
+        .hero-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 100px 0;
+        }
+
+        /* 3. 标题与修饰 */
+        .section-title {
+            font-weight: 700;
+            color: #2c3e50;
+            position: relative;
+            padding-bottom: 12px;
+            margin-bottom: 50px;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%; bottom: 0;
+            width: 50px; height: 4px;
+            background-color: var(--accent-blue);
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        /* 4. 卡片浮起特效 */
+        .card {
+            border: none;
+            border-radius: 16px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            background: #fff;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08) !important;
+        }
+
+        /* 5. 论文项交互 */
+        .pub-item {
+            padding: 15px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+        .pub-item:hover {
+            background-color: rgba(52, 152, 219, 0.05);
+            border-left: 4px solid var(--accent-blue);
+            transform: translateX(5px);
+        }
+
+        /* 6. 进场动画控制 */
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .reveal-up.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: var(--academic-blue);
+            color: rgba(255, 255, 255, 0.8);
+            border-top: 4px solid var(--accent-blue);
+        }
+        footer a { color: var(--accent-blue); text-decoration: none; }
+        footer a:hover { color: #fff; text-decoration: underline; }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="90">
+
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#page-top">🛡️ Safe AI Team</a>
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto py-3 py-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#page-top">首页</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#news">最新动态</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#research">研究方向</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#publications">学术成果</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#team">团队成员</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header id="page-top" class="hero-section text-center reveal-up">
+        <div class="container">
+            <h1 class="display-4 fw-bold text-dark">安全人工智能团队</h1>
+            <h2 class="h5 text-secondary mt-3 mb-4 fw-light">Safe Artificial Intelligence Team @ Hefei University</h2>
+            <p class="w-75 mx-auto lh-lg text-secondary">
+                由吴志泽院长指导，依托于合肥大学人工智能与大数据学院。我们致力于推进前沿的深度学习与安全人工智能技术，旨在构建鲁棒、可信、泛化能力强的多模态 AI 系统。团队深耕对抗机器学习、域适应等核心领域，力求在真实的动态视觉场景中，解决模型面临的安全挑战与分布偏移难题。
+            </p>
+            <a href="#join" class="btn btn-primary btn-lg mt-4 shadow-sm px-5 rounded-pill">加入我们</a>
+        </div>
+    </header>
+
+    <section id="news" class="container py-5 reveal-up">
+        <h2 class="section-title text-center d-block mx-auto">📌 最新动态 (News)</h2>
+        
+        <div class="row g-5 align-items-center mb-5 pb-5 border-bottom">
+            <div class="col-md-5">
+                <div class="position-relative">
+                    <img src="assets/images/nrfp-framework.png" alt="NRFP Framework" class="img-fluid rounded-4 shadow">
+                    <div class="position-absolute top-0 start-0 m-3">
+                        <span class="badge bg-danger shadow px-3 py-2 rounded-pill">🔥 CVPR 2026</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <h3 class="fw-bold text-dark mb-3">无源域适应领域取得重大突破，论文 NRFP 被 CVPR 2026 录用</h3>
+                <p class="text-secondary lh-lg">
+                    <strong>[2026.03]</strong> 团队最新研究工作 <i>"NRFP: A Noise-Robust Feature Plugin for Source-Free Domain Adaptation"</i> 正式被计算机视觉顶级会议 <strong>CVPR 2026 (CCF-A类)</strong> 录用。该研究创新性地提出了一种即插即用的噪声鲁棒特征插件，通过引入双效机制成功强制模型剥离表面干扰，在多项主流基准测试中全面刷新了 SOTA 性能。
+                </p>
+                <div class="mt-4">
+                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle p-2 px-3 me-2">无源域适应 (SFDA)</span>
+                    <span class="badge bg-light text-dark border p-2 px-3">特征提取</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-5 align-items-center flex-md-row-reverse mb-4">
+            <div class="col-md-5">
+                <div class="position-relative">
+                    <img src="assets/images/skeleton-attack.png" alt="SVAttack Framework" class="img-fluid rounded-4 shadow">
+                    <div class="position-absolute top-0 start-0 m-3">
+                        <span class="badge bg-secondary shadow px-3 py-2 rounded-pill">📝 Under Review</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <h3 class="fw-bold text-dark mb-3">安全 AI 领域新进展：面向图卷积骨架动作识别的空间视点转移攻击研究</h3>
+                <p class="text-secondary lh-lg">
+                    <strong>[2026.02]</strong> 团队完成研究论文 <i>"Spatial Viewpoint Shift Attack on Graph Convolutional Skeleton Action Recognition"</i>（目前正在审稿中）。团队提出了一种空间梯度阻尼器与基于视点的约束机制，在保持视觉上合理的骨骼运动的同时，显著增强了对抗样本在不同 GCN 架构间的可迁移性。相关代码已开源。
+                </p>
+                <div class="mt-4">
+                    <a href="https://github.com/MilkyWay123123/SVAttack" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill px-4">🔗 GitHub Code</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="research" class="py-5 bg-light">
+        <div class="container reveal-up">
+            <h2 class="section-title text-center d-block mx-auto">🔬 研究方向 (Research)</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6">
+                    <div class="card p-4 h-100 shadow-sm" style="border-top: 4px solid #3498db;">
+                        <div class="card-body text-center">
+                            <div class="fs-1 mb-3">🛡️</div>
+                            <h4 class="card-title fw-bold text-dark mb-3">对抗机器学习</h4>
+                            <p class="card-text text-secondary lh-lg text-start">
+                                专注模型在面对对抗样本时的脆弱性。研究黑盒场景下的对抗攻击与防御策略，当前重点为图像领域或骨骼动作识别场景下的安全性评估。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card p-4 h-100 shadow-sm" style="border-top: 4px solid #0dcaf0;">
+                        <div class="card-body text-center">
+                            <div class="fs-1 mb-3">🌐</div>
+                            <h4 class="card-title fw-bold text-dark mb-3">域适应与域泛化</h4>
+                            <p class="card-text text-secondary lh-lg text-start">
+                                提升模型在未知领域和动态环境中的自适应能力。探索跨域数据下的特征对齐，以及应对分布偏移的鲁棒性挑战。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="publications" class="container py-5 reveal-up">
+        <h2 class="section-title text-center d-block mx-auto">📄 学术成果 (Publications)</h2>
+        <div class="mt-4 publication-list">
+            
+            <div class="pub-item mb-3 border-bottom pb-3">
+                <h5 class="fw-bold mb-2">Local and global self-attention enhanced graph convolutional network for skeleton-based action recognition</h5>
+                <p class="mb-2 text-secondary">
+                    <strong>Zhize Wu</strong>, Yue Ding, Long Wan, et al. 
+                    <span class="text-dark"><i>Pattern Recognition</i></span>, 2025, 159: 111106. 
+                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle ms-1">SCI Q1</span>
+                    <span class="badge bg-info-subtle text-info border border-info-subtle ms-1">CAAI-A</span>
+                </p>
+                <div class="pub-links">
+                    <a href="#" class="btn btn-sm btn-outline-primary rounded-pill px-3 py-1 me-2">PDF</a>
+                    <a href="#" class="btn btn-sm btn-outline-dark rounded-pill px-3 py-1">Code</a>
+                </div>
+            </div>
+
+            <div class="pub-item mb-3 border-bottom pb-3">
+                <h5 class="fw-bold mb-2">SelfGCN: Graph Convolution Network With Self-Attention for Skeleton-Based Action Recognition</h5>
+                <p class="mb-2 text-secondary">
+                    <strong>Zhize Wu</strong>, Pengpeng Sun, Xin Chen, et al. 
+                    <span class="text-dark"><i>IEEE Transactions on Image Processing</i></span>, 2024, 33: 4391-4403. 
+                    <span class="badge bg-danger-subtle text-danger border border-danger-subtle ms-1">CCF-A</span>
+                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle ms-1">SCI Q1</span>
+                </p>
+                <div class="pub-links">
+                    <a href="#" class="btn btn-sm btn-outline-primary rounded-pill px-3 py-1 me-2">PDF</a>
+                    <a href="#" class="btn btn-sm btn-outline-dark rounded-pill px-3 py-1">Code</a>
+                </div>
+            </div>
+
+            <div class="pub-item mb-3 border-bottom pb-3">
+                <h5 class="fw-bold mb-2">Frequency Fitness Assignment: Optimization without a Bias for Good Solutions can be Efficient</h5>
+                <p class="mb-2 text-secondary">
+                    Thomas Weise, <strong>Zhize Wu</strong>, Xinlu Li, et al. 
+                    <span class="text-dark"><i>IEEE Transactions on Evolutionary Computation</i></span>, 2023, 27(4): 980-992. 
+                    <span class="badge bg-info-subtle text-info border border-info-subtle ms-1">CAAI-A</span>
+                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle ms-1">SCI Q1</span>
+                </p>
+                <div class="pub-links">
+                    <a href="#" class="btn btn-sm btn-outline-primary rounded-pill px-3 py-1 me-2">PDF</a>
+                </div>
+            </div>
+
+             <div class="pub-item mb-3 border-bottom pb-3">
+                <h5 class="fw-bold mb-2">Hierarchical Fusion and Divergent Activation based Weakly Supervised Learning for Object Detection from Remote Sensing Images</h5>
+                <p class="mb-2 text-secondary">
+                    <strong>Zhize Wu</strong>, Jian Xu, Yan Wang, et al. 
+                    <span class="text-dark"><i>Information Fusion</i></span>, 2022, 80: 23-43. 
+                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle ms-1">SCI Q1</span>
+                    <span class="badge bg-info-subtle text-info border border-info-subtle ms-1">CAAI-A</span>
+                </p>
+                <div class="pub-links">
+                    <a href="#" class="btn btn-sm btn-outline-primary rounded-pill px-3 py-1 me-2">PDF</a>
+                    <a href="#" class="btn btn-sm btn-outline-dark rounded-pill px-3 py-1">Code</a>
+                </div>
+            </div>
+
+            <div class="pub-item mb-3 border-bottom pb-3">
+                <h5 class="fw-bold mb-2">A New Benchmark for Household Garbage Image Recognition</h5>
+                <p class="mb-2 text-secondary">
+                    <strong>Zhize Wu</strong>, Huanyi Li, Xiaofeng Wang, et al. 
+                    <span class="text-dark"><i>Tsinghua Science and Technology</i></span>, 2022, 27(5): 793-803. 
+                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle ms-1">SCI Q1</span>
+                </p>
+                <div class="pub-links">
+                    <a href="#" class="btn btn-sm btn-outline-primary rounded-pill px-3 py-1 me-2">PDF</a>
+                </div>
+            </div>
+
+            <div class="pub-item mb-3 border-bottom pb-3">
+                <h5 class="fw-bold mb-2">Rotation-Aware Representation Learning for Remote Sensing Image Retrieval</h5>
+                <p class="mb-2 text-secondary">
+                    <strong>Zhize Wu</strong>, Chang Zou, Yan Wang, et al. 
+                    <span class="text-dark"><i>Information Science</i></span>, 2021, 572: 404-423. 
+                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle ms-1">SCI Q1</span>
+                </p>
+                <div class="pub-links">
+                    <a href="#" class="btn btn-sm btn-outline-primary rounded-pill px-3 py-1 me-2">PDF</a>
+                </div>
+            </div>
+
+            <div class="pub-item mb-3 border-bottom pb-3">
+                <h5 class="fw-bold mb-2">Hierarchical Object Detection for Very High-resolution Satellite Images</h5>
+                <p class="mb-2 text-secondary">
+                    <strong>Zhize Wu</strong>, Xiaofeng Wang, Le Zou, et al. 
+                    <span class="text-dark"><i>Applied Soft Computing</i></span>, 2021, 114(Part A): 107885. 
+                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle ms-1">SCI Q1</span>
+                </p>
+                <div class="pub-links">
+                    <a href="#" class="btn btn-sm btn-outline-primary rounded-pill px-3 py-1 me-2">PDF</a>
+                </div>
+            </div>
+
+            <div class="pub-item mb-3 border-bottom pb-3">
+                <h5 class="fw-bold mb-2">A Benchmark Data Set for Aircraft Type Recognition from Remote Sensing Images</h5>
+                <p class="mb-2 text-secondary">
+                    <strong>Zhize Wu</strong>, Shouhong Wan, Xiaofeng Wang, et al. 
+                    <span class="text-dark"><i>Applied Soft Computing</i></span>, 2020, 89: 106132. 
+                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle ms-1">SCI Q1</span>
+                </p>
+                <div class="pub-links">
+                    <a href="#" class="btn btn-sm btn-outline-primary rounded-pill px-3 py-1 me-2">PDF</a>
+                </div>
+            </div>
+
+            <div class="pub-item mb-3 border-bottom pb-3">
+                <h5 class="fw-bold mb-2">Autoencoder-based feature learning from a 2D depth map and 3D skeleton for action recognition</h5>
+                <p class="mb-2 text-secondary">
+                    <strong>Zhize Wu</strong>, Shouhong Wan, Li Yan, et al. 
+                    <span class="text-dark"><i>Journal of Computers</i></span>, 2018, 29(4): 82-95. 
+                    <span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle ms-1">EI</span>
+                </p>
+                <div class="pub-links">
+                    <a href="#" class="btn btn-sm btn-outline-primary rounded-pill px-3 py-1 me-2">PDF</a>
+                </div>
+            </div>
+
+            <div class="pub-item mb-3">
+                <h5 class="fw-bold mb-2">Replicable Self-Documenting Experiments with Arbitrary Search Spaces and Algorithms</h5>
+                <p class="mb-2 text-secondary">
+                    Thomas Weise, <strong>Zhize Wu</strong>. 
+                    <span class="text-dark"><i>GECCO Companion</i></span>, 2023: 1891-1899. 
+                    <span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle ms-1">EI</span>
+                    <span class="badge bg-dark-subtle text-dark border border-dark-subtle ms-1">CCF Recommended</span>
+                </p>
+                <div class="pub-links">
+                    <a href="#" class="btn btn-sm btn-outline-primary rounded-pill px-3 py-1 me-2">PDF</a>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <section id="team" class="py-5 bg-light">
+        <div class="container reveal-up">
+            <h2 class="section-title text-center d-block mx-auto">👨‍🏫 团队成员 (People)</h2>
+            
+            <h3 class="h5 mt-4 mb-4 fw-bold text-dark">指导教师 (Faculty & Mentors)</h3>
+            <div class="row g-4">
+                <div class="col-6 col-md-3">
+                    <div class="card text-center p-4 shadow-sm border-0 h-100">
+                        <div class="rounded-circle text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 80px; height: 80px; font-size: 1.8rem; background: linear-gradient(135deg, #3498db, #2980b9);">吴</div>
+                        <h5 class="fw-bold mb-1">吴志泽</h5>
+                        <p class="text-secondary small mb-2">教授 (Professor)</p>
+                        <a href="mailto:wuzz@hfuu.edu.cn" class="text-decoration-none small">wuzz@hfuu.edu.cn</a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="card text-center p-4 shadow-sm border-0 h-100">
+                        <div class="rounded-circle text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 80px; height: 80px; font-size: 1.8rem; background: linear-gradient(135deg, #3498db, #2980b9);">孙</div>
+                        <h5 class="fw-bold mb-1">孙斐</h5>
+                        <p class="text-secondary small mb-2">教授 (Professor)</p>
+                        <a href="mailto:sunfei@hfuu.edu.cn" class="text-decoration-none small">sunfei@hfuu.edu.cn</a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="card text-center p-4 shadow-sm border-0 h-100">
+                        <div class="rounded-circle text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 80px; height: 80px; font-size: 1.8rem; background: linear-gradient(135deg, #3498db, #2980b9);">汪</div>
+                        <h5 class="fw-bold mb-1">汪自旺</h5>
+                        <p class="text-secondary small mb-2">讲师 (Lecturer)</p>
+                        <a href="mailto:wangzw@hfuu.edu.cn" class="text-decoration-none small">wangzw@hfuu.edu.cn</a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="card text-center p-4 shadow-sm border-0 h-100">
+                        <div class="rounded-circle text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 80px; height: 80px; font-size: 1.8rem; background: linear-gradient(135deg, #3498db, #2980b9);">蒋</div>
+                        <h5 class="fw-bold mb-1">蒋越</h5>
+                        <p class="text-secondary small mb-2">讲师 (Lecturer)</p>
+                        <a href="mailto:jiangyue@hfuu.edu.cn" class="text-decoration-none small">jiangyue@hfuu.edu.cn</a>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="h5 mt-5 mb-4 fw-bold text-dark">在读研究生 (Graduate Students)</h3>
+            <div class="card shadow-sm border-0 p-4 p-md-5">
+                <p class="text-secondary mb-4 lh-lg">团队深耕于计算机视觉与 AI 安全领域，致力于推进对抗攻击与防御、域适应等核心课题。</p>
+                
+                <h6 class="text-primary fw-bold mb-3" style="border-left: 3px solid #3498db; padding-left: 10px;">2023级</h6>
+                <div class="d-flex flex-wrap gap-2 mb-4">
+                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill shadow-sm">👨‍🎓 秦世杰</span>
+                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill shadow-sm">👨‍🎓 魏宏伟</span>
+                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill shadow-sm">👩‍🎓 吴莹莹</span>
+                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill shadow-sm">👩‍🎓 张敏</span>
+                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill shadow-sm">👨‍🎓 张韦</span>
+                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill shadow-sm">👨‍🎓 邹焕鑫</span>
+                </div>
+
+                <h6 class="text-primary fw-bold mb-3" style="border-left: 3px solid #3498db; padding-left: 10px;">2024级</h6>
+                <div class="d-flex flex-wrap gap-2 mb-4">
+                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill shadow-sm">👨‍🎓 华善聪</span>
+                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill shadow-sm">👨‍🎓 李鼎</span>
+                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill shadow-sm">👨‍🎓 鹿梦浩</span>
+                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill shadow-sm">👨‍🎓 孟杰</span>
+                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill shadow-sm">👨‍🎓 张亚微</span>
+                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill shadow-sm">👨‍🎓 周基健</span>
+                </div>
+
+                <h6 class="text-primary fw-bold mb-3" style="border-left: 3px solid #3498db; padding-left: 10px;">2025级</h6>
+                <div class="d-flex flex-wrap gap-2">
+                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill shadow-sm">👨‍🎓 付余涛</span>
+                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill shadow-sm">👨‍🎓 洪志陈</span>
+                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill shadow-sm">👩‍🎓 荣子怡</span>
+                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill shadow-sm">👨‍🎓 王鹏松</span>
+                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill shadow-sm">👩‍🎓 夏雨萱</span>
+                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill shadow-sm">👨‍🎓 姚俊豪</span>
+                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill shadow-sm">👩‍🎓 尹梦雨</span>
+                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill shadow-sm">👩‍🎓 章佳宜</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="join" class="text-center py-5 reveal-up">
+        <div class="container py-4">
+            <h3 class="mb-4 text-white">💡 加入我们 (Join Us)</h3>
+            <p class="col-md-8 mx-auto mb-4 lh-lg text-light opacity-75">
+                我们常年招收对 <strong>计算机视觉、AI 安全</strong> 充满热忱的研究生。<br>
+                如果你对我们的课题有浓厚的研究兴趣，欢迎将简历发送至导师邮箱。
+            </p>
+            <div class="mt-4 mb-5 text-light">
+                <p class="mb-2"><strong>📬 Email:</strong> <a href="mailto:wuzz@hfuu.edu.cn" class="text-info">wuzz@hfuu.edu.cn</a></p>
+                <p class="mb-0"><strong>📍 Location:</strong> 安徽省合肥市蜀山区中德合作创新园7号楼404</p>
+            </div>
+            <p class="small mb-0 opacity-50 text-light">&copy; 2026 Safe AI Team, Hefei University. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // 1. 移动端：点击菜单项后自动收起
+            const navLinks = document.querySelectorAll('.nav-link');
+            const menuToggle = document.getElementById('navbarResponsive');
+            const bsCollapse = new bootstrap.Collapse(menuToggle, {toggle: false});
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (menuToggle.classList.contains('show')) {
+                        bsCollapse.toggle();
+                    }
+                });
+            });
+
+            // 2. 丝滑滚动监听与激活
+            const sections = document.querySelectorAll('section, header');
+            const navBarHeight = 76;
+            
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (window.scrollY >= (sectionTop - navBarHeight - 100)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+
+            // 3. 进场动画 (Scroll Reveal)
+            const revealElements = document.querySelectorAll('.reveal-up');
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target); 
+                    }
+                });
+            }, { rootMargin: "0px 0px -50px 0px" });
+
+            revealElements.forEach(el => revealObserver.observe(el));
+        });
+    </script>
+</body>
+</html>
