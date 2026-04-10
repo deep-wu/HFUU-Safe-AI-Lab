@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>团队成员 | Secure AI Team</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: #333; padding-top: 76px; background-color: #fcfdfd; }
+        :root { --academic-blue: #003366; --accent-blue: #3498db; }
+        .navbar { background-color: var(--academic-blue); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); }
+        .navbar-brand { font-weight: 700; color: #fff !important; }
+        .nav-link { color: rgba(255, 255, 255, 0.75) !important; font-weight: 500; margin: 0 4px; border-radius: 6px;}
+        .nav-link:hover, .nav-link.active { color: #fff !important; background-color: rgba(255, 255, 255, 0.15); }
+        .section-title { font-weight: 700; color: #2c3e50; padding-bottom: 12px; border-bottom: 4px solid var(--accent-blue); display: inline-block; margin-bottom: 40px; }
+        
+        /* 针对新版学生卡片的样式优化 */
+        .student-card { border: none; border-radius: 12px; background: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.3s; }
+        .student-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .student-info-list li { margin-bottom: 8px; font-size: 0.9rem; }
+        .student-info-list strong { color: #555; width: 80px; display: inline-block; }
+        footer { background-color: var(--academic-blue); color: rgba(255, 255, 255, 0.8); padding: 20px 0; margin-top: 50px; border-top: 5px solid var(--accent-blue);}
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">🛡️ Secure AI Team</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">返回首页</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="team.html">团队成员</a></li>
+                    <li class="nav-item"><a class="nav-link" href="downloads.html">资料下载</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <h2 class="section-title">👨‍🏫 团队成员 (People)</h2>
+        
+        <h5 class="text-primary fw-bold mb-4" style="border-left: 4px solid #3498db; padding-left: 10px;">2023级硕士研究生</h5>
+        <div class="row g-4 mb-5">
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card student-card h-100 p-3">
+                    <div class="d-flex align-items-center border-bottom pb-3 mb-3">
+                        <img src="assets/images/student-placeholder.jpg" alt="证件照" class="rounded-3 shadow-sm me-3" style="width: 80px; height: 110px; object-fit: cover;">
+                        <div>
+                            <h4 class="fw-bold mb-1 text-dark">秦世杰</h4>
+                            <span class="badge bg-light text-dark border">2023级 硕士</span>
+                        </div>
+                    </div>
+                    <ul class="list-unstyled student-info-list text-secondary mb-0">
+                        <li><strong>📞 手机号:</strong> 138xxxx0001</li>
+                        <li><strong>📧 邮箱:</strong> qinsj@stu.hfuu.edu.cn</li>
+                        <li><strong>📍 籍贯:</strong> 安徽 合肥</li>
+                        <li><strong>🎨 爱好:</strong> 篮球、摄影</li>
+                        <li><strong>🔬 方向:</strong> 域适应、目标检测</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card student-card h-100 p-3">
+                    <div class="d-flex align-items-center border-bottom pb-3 mb-3">
+                        <img src="assets/images/student-placeholder.jpg" alt="证件照" class="rounded-3 shadow-sm me-3" style="width: 80px; height: 110px; object-fit: cover;">
+                        <div>
+                            <h4 class="fw-bold mb-1 text-dark">吴莹莹</h4>
+                            <span class="badge bg-light text-dark border">2023级 硕士</span>
+                        </div>
+                    </div>
+                    <ul class="list-unstyled student-info-list text-secondary mb-0">
+                        <li><strong>📞 手机号:</strong> 139xxxx0002</li>
+                        <li><strong>📧 邮箱:</strong> wuyy@stu.hfuu.edu.cn</li>
+                        <li><strong>📍 籍贯:</strong> 安徽 芜湖</li>
+                        <li><strong>🎨 爱好:</strong> 阅读、羽毛球</li>
+                        <li><strong>🔬 方向:</strong> 图卷积骨架动作识别</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="text-center">
+        <p class="small mb-0">&copy; 2026 Secure AI Team, Hefei University.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
