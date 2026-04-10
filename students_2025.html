@@ -17,7 +17,15 @@
         .student-grid-card { border: 1px solid #eaeaea; border-radius: 0px; background: #fff; transition: all 0.3s; }
         .student-grid-card:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-color: var(--accent-blue); }
         /* 照片区域：设置为长方形证件照比例 */
-        .student-photo { width: 100%; height: 260px; object-fit: cover; border-bottom: 1px solid #eaeaea; }
+        /* 修复后的照片样式：强制 3:4 证件照比例，优先显示头部 */
+        .student-photo { 
+            width: 100%; 
+            height: auto; /* 取消原本的固定高度 */
+            aspect-ratio: 3 / 4; /* 强制维持标准的证件照宽高比 */
+            object-fit: cover; 
+            object-position: center 10%; /* 核心魔法：如果非要裁剪，优先保留顶部 10% 以下的头部和人脸 */
+            border-bottom: 1px solid #eaeaea; 
+        }
         
         .info-row { margin-bottom: 8px; font-size: 0.9rem; line-height: 1.5; display: flex; align-items: flex-start;}
         .info-label { font-weight: 600; color: #555; width: 75px; flex-shrink: 0; }
