@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>在读研究生 | Secure AI Team</title>
+    <title>2025级研究生 | Secure AI Team</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     
@@ -11,63 +11,23 @@
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: #333; padding-top: 76px; background-color: #f8f9fa; }
         :root { --academic-blue: #003366; --accent-blue: #3498db; }
         
-        /* 导航栏 */
         .navbar { background-color: var(--academic-blue); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); }
         .navbar-brand { font-weight: 700; color: #fff !important; }
         .nav-link { color: rgba(255, 255, 255, 0.75) !important; font-weight: 500; margin: 0 4px; border-radius: 6px;}
         .nav-link:hover, .nav-link.active { color: #fff !important; background-color: rgba(255, 255, 255, 0.15); }
         
-        /* 头部标题 */
         .page-header { text-align: center; margin-bottom: 40px; }
         .page-header h2 { font-weight: 800; color: var(--academic-blue); letter-spacing: 1px; }
         .page-header span { font-size: 0.9rem; color: #888; }
         
-        /* 💎 高级微立体卡片样式 */
-        .student-grid-card { 
-            border: none; 
-            border-radius: 16px; 
-            background: #fff; 
-            box-shadow: 0 8px 24px rgba(0,0,0,0.04); 
-            transition: all 0.3s ease; 
-            overflow: hidden; 
-        }
-        .student-grid-card:hover { 
-            transform: translateY(-8px); 
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1); 
-        }
+        .transition-hover { transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1); }
+        .transition-hover:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,0.08) !important; }
         
-        /* 照片区域：强制 3:4 证件照比例，优先人脸对齐 */
-        .student-photo { 
-            width: 100%; 
-            height: auto; 
-            aspect-ratio: 3 / 4; 
-            object-fit: cover; 
-            object-position: center 10%; 
-            border-bottom: 1px solid #f0f0f0; 
-        }
+        .info-item { display: flex; align-items: flex-start; margin-bottom: 8px; font-size: 0.85rem; color: #555; }
+        .info-icon { width: 22px; color: var(--accent-blue); flex-shrink: 0; padding-top: 3px; font-size: 0.9rem; text-align: center; margin-right: 6px;}
+        .info-value { word-break: break-all; line-height: 1.5; }
         
-        /* 卡片内容排版 */
-        .card-body { padding: 22px; }
-        .student-name { font-weight: 700; font-size: 1.3rem; color: #2c3e50; margin-bottom: 4px; }
-        .student-title { font-size: 0.85rem; color: #7f8c8d; margin-bottom: 18px; font-weight: 500; }
-        
-        /* 带图标的信息行 */
-        .info-item { display: flex; align-items: flex-start; margin-bottom: 10px; font-size: 0.85rem; color: #555; }
-        .info-icon { width: 24px; color: var(--accent-blue); flex-shrink: 0; padding-top: 2px; font-size: 0.9rem;}
-        .info-value { word-break: break-all; line-height: 1.4; }
-        
-        /* 研究方向专属醒目标签 */
-        .research-tag { 
-            display: inline-block; 
-            background-color: rgba(52, 152, 219, 0.1); 
-            color: var(--accent-blue); 
-            font-size: 0.8rem; 
-            padding: 6px 14px; 
-            border-radius: 20px; 
-            font-weight: 600; 
-            margin-top: 12px; 
-        }
-
+        .research-tag { display: inline-block; background-color: rgba(52, 152, 219, 0.1); color: var(--accent-blue); font-size: 0.8rem; padding: 5px 12px; border-radius: 20px; font-weight: 600; }
         footer { background-color: var(--academic-blue); color: rgba(255, 255, 255, 0.8); padding: 20px 0; margin-top: 50px; border-top: 5px solid var(--accent-blue);}
     </style>
 </head>
@@ -86,160 +46,98 @@
     </nav>
 
     <div class="container py-5">
-        
         <div class="page-header">
             <span>更新日期：2026年04月</span>
-            <h2 class="mt-2">在读研究生</h2>
+            <h2 class="mt-2">2025级研究生</h2>
         </div>
         
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
-            
-
-            <div class="col">
-                <div class="card student-grid-card h-100">
-                    <img src="assets/images/stu_fuyutao.jpg" alt="付余涛" class="student-photo">
-                    <div class="card-body">
-                        <div class="student-name">付余涛</div>
-                        <div class="student-title">硕士研究生</div>
-
-                        <div class="info-item">
-                            <span class="info-icon"><i class="fas fa-mobile-alt"></i></span>
-                            <span class="info-value">13966909495</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon"><i class="fas fa-envelope"></i></span>
-                            <span class="info-value">fuyutao@stu.hfuu.edu.cn</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon"><i class="fas fa-map-marker-alt"></i></span>
-                            <span class="info-value">安徽省安庆市宿松县</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon"><i class="fas fa-star"></i></span>
-                            <span class="info-value">游泳</span>
-                        </div>
-                        
-                        <div class="research-tag"><i class="fas fa-microscope me-1"></i> 骨架对抗</div>
+        <div class="row g-4">
+            <div class="col-lg-6">
+                <div class="d-flex flex-column flex-sm-row align-items-center align-items-sm-start p-4 bg-white rounded-4 shadow-sm transition-hover h-100">
+                    <img src="assets/images/stu_fuyutao.jpg" alt="付余涛" class="rounded-3 shadow-sm mb-3 mb-sm-0 me-sm-4 flex-shrink-0" style="width: 120px; height: 160px; object-fit: cover; border: 3px solid #f8f9fa;">
+                    <div class="text-center text-sm-start d-flex flex-column h-100 flex-grow-1">
+                        <h4 class="fw-bold mb-1 text-dark">付余涛</h4>
+                        <p class="text-primary small mb-3 fw-medium">硕士研究生</p>
+                        <div class="info-item"><span class="info-icon"><i class="fas fa-envelope"></i></span><span class="info-value">fuyutao@stu.hfuu.edu.cn</span></div>
+                        <div class="info-item"><span class="info-icon"><i class="fas fa-map-marker-alt"></i></span><span class="info-value">安徽省安庆市宿松县</span></div>
+                        <div class="info-item"><span class="info-icon"><i class="fas fa-star"></i></span><span class="info-value">游泳</span></div>
+                        <div class="mt-auto pt-2 text-center text-sm-start"><div class="research-tag"><i class="fas fa-microscope me-1"></i> 骨架对抗</div></div>
                     </div>
                 </div>
             </div>
 
-            <div class="col">
-                <div class="card student-grid-card h-100">
-                    <img src="assets/images/stu_rongziyi.jpg" alt="荣子怡" class="student-photo">
-                    <div class="card-body">
-                        <div class="student-name">荣子怡</div>
-                        <div class="student-title">硕士研究生</div>
-
-                        <div class="info-item">
-                            <span class="info-icon"><i class="fas fa-mobile-alt"></i></span>
-                            <span class="info-value">13054157681</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon"><i class="fas fa-envelope"></i></span>
-                            <span class="info-value text-muted fst-italic">暂无</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon"><i class="fas fa-map-marker-alt"></i></span>
-                            <span class="info-value">安徽省淮北市濉溪县</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon"><i class="fas fa-star"></i></span>
-                            <span class="info-value">打麻将</span>
-                        </div>
-                        
-                        <div class="research-tag"><i class="fas fa-microscope me-1"></i> 无源域适应</div>
+            <div class="col-lg-6">
+                <div class="d-flex flex-column flex-sm-row align-items-center align-items-sm-start p-4 bg-white rounded-4 shadow-sm transition-hover h-100">
+                    <img src="assets/images/stu_rongziyi.jpg" alt="荣子怡" class="rounded-3 shadow-sm mb-3 mb-sm-0 me-sm-4 flex-shrink-0" style="width: 120px; height: 160px; object-fit: cover; border: 3px solid #f8f9fa;">
+                    <div class="text-center text-sm-start d-flex flex-column h-100 flex-grow-1">
+                        <h4 class="fw-bold mb-1 text-dark">荣子怡</h4>
+                        <p class="text-primary small mb-3 fw-medium">硕士研究生</p>
+                        <div class="info-item"><span class="info-icon"><i class="fas fa-envelope"></i></span><span class="info-value">rongzy015@163.com</span></div>
+                        <div class="info-item"><span class="info-icon"><i class="fas fa-map-marker-alt"></i></span><span class="info-value">安徽省淮北市濉溪县</span></div>
+                        <div class="info-item"><span class="info-icon"><i class="fas fa-star"></i></span><span class="info-value">打麻将，打排球</span></div>
+                        <div class="mt-auto pt-2 text-center text-sm-start"><div class="research-tag"><i class="fas fa-microscope me-1"></i> 无源域适应</div></div>
                     </div>
                 </div>
             </div>
 
-            <div class="col">
-                <div class="card student-grid-card h-100">
-                    <img src="assets/images/stu_xiayuxuan.jpg" alt="夏雨萱" class="student-photo">
-                    <div class="card-body">
-                        <div class="student-name">夏雨萱</div>
-                        <div class="student-title">硕士研究生</div>
-
-                        <div class="info-item">
-                            <span class="info-icon"><i class="fas fa-mobile-alt"></i></span>
-                            <span class="info-value">17756223525</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon"><i class="fas fa-envelope"></i></span>
-                            <span class="info-value text-muted fst-italic">暂无</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon"><i class="fas fa-map-marker-alt"></i></span>
-                            <span class="info-value">安徽省芜湖市南陵县</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon"><i class="fas fa-star"></i></span>
-                            <span class="info-value">运动</span>
-                        </div>
-                        
-                        <div class="research-tag"><i class="fas fa-microscope me-1"></i> 无源域适应</div>
+            <div class="col-lg-6">
+                <div class="d-flex flex-column flex-sm-row align-items-center align-items-sm-start p-4 bg-white rounded-4 shadow-sm transition-hover h-100">
+                    <img src="assets/images/stu_xiayuxuan.jpg" alt="夏雨萱" class="rounded-3 shadow-sm mb-3 mb-sm-0 me-sm-4 flex-shrink-0" style="width: 120px; height: 160px; object-fit: cover; border: 3px solid #f8f9fa;">
+                    <div class="text-center text-sm-start d-flex flex-column h-100 flex-grow-1">
+                        <h4 class="fw-bold mb-1 text-dark">夏雨萱</h4>
+                        <p class="text-primary small mb-3 fw-medium">硕士研究生</p>
+                        <div class="info-item"><span class="info-icon"><i class="fas fa-envelope"></i></span><span class="info-value">17756223525@163.com</span></div>
+                        <div class="info-item"><span class="info-icon"><i class="fas fa-map-marker-alt"></i></span><span class="info-value">安徽省芜湖市南陵县</span></div>
+                        <div class="info-item"><span class="info-icon"><i class="fas fa-star"></i></span><span class="info-value">运动</span></div>
+                        <div class="mt-auto pt-2 text-center text-sm-start"><div class="research-tag"><i class="fas fa-microscope me-1"></i> 无源域适应</div></div>
                     </div>
                 </div>
             </div>
 
-            <div class="col">
-                <div class="card student-grid-card h-100">
-                    <img src="assets/images/stu_yaojunhao.jpg" alt="姚俊豪" class="student-photo">
-                    <div class="card-body">
-                        <div class="student-name">姚俊豪</div>
-                        <div class="student-title">硕士研究生</div>
-
-                        <div class="info-item">
-                            <span class="info-icon"><i class="fas fa-mobile-alt"></i></span>
-                            <span class="info-value">19855918290</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon"><i class="fas fa-envelope"></i></span>
-                            <span class="info-value">junhaoyao200@gmail.com</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon"><i class="fas fa-map-marker-alt"></i></span>
-                            <span class="info-value">安徽省黄山市歙县</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon"><i class="fas fa-star"></i></span>
-                            <span class="info-value">旅游</span>
-                        </div>
-                        
-                        <div class="research-tag"><i class="fas fa-microscope me-1"></i> 扩散攻击</div>
+            <div class="col-lg-6">
+                <div class="d-flex flex-column flex-sm-row align-items-center align-items-sm-start p-4 bg-white rounded-4 shadow-sm transition-hover h-100">
+                    <img src="assets/images/stu_yaojunhao.jpg" alt="姚俊豪" class="rounded-3 shadow-sm mb-3 mb-sm-0 me-sm-4 flex-shrink-0" style="width: 120px; height: 160px; object-fit: cover; border: 3px solid #f8f9fa;">
+                    <div class="text-center text-sm-start d-flex flex-column h-100 flex-grow-1">
+                        <h4 class="fw-bold mb-1 text-dark">姚俊豪</h4>
+                        <p class="text-primary small mb-3 fw-medium">硕士研究生</p>
+                        <div class="info-item"><span class="info-icon"><i class="fas fa-envelope"></i></span><span class="info-value">junhaoyao200@gmail.com</span></div>
+                        <div class="info-item"><span class="info-icon"><i class="fas fa-map-marker-alt"></i></span><span class="info-value">安徽省黄山市歙县</span></div>
+                        <div class="info-item"><span class="info-icon"><i class="fas fa-star"></i></span><span class="info-value">旅游</span></div>
+                        <div class="mt-auto pt-2 text-center text-sm-start"><div class="research-tag"><i class="fas fa-microscope me-1"></i> 扩散攻击</div></div>
                     </div>
                 </div>
             </div>
-                        <div class="col">
-                <div class="card student-grid-card h-100">
-                    <img src="assets/images/stu_yinmengyu.jpg" alt="尹梦雨" class="student-photo">
-                    <div class="card-body">
-                        <div class="student-name">尹梦雨</div>
-                        <div class="student-title">硕士研究生</div>
 
-                        <div class="info-item">
-                            <span class="info-icon"><i class="fas fa-mobile-alt"></i></span>
-                            <span class="info-value">18239447349</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon"><i class="fas fa-envelope"></i></span>
-                            <span class="info-value text-muted fst-italic">暂无</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon"><i class="fas fa-map-marker-alt"></i></span>
-                            <span class="info-value">河南省周口市</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon"><i class="fas fa-star"></i></span>
-                            <span class="info-value">吃喝玩乐</span>
-                        </div>
-                        
+            <div class="col-lg-6">
+                <div class="d-flex flex-column flex-sm-row align-items-center align-items-sm-start p-4 bg-white rounded-4 shadow-sm transition-hover h-100">
+                    <img src="assets/images/stu_zhangjiayi.jpg" alt="章佳宜" class="rounded-3 shadow-sm mb-3 mb-sm-0 me-sm-4 flex-shrink-0" style="width: 120px; height: 160px; object-fit: cover; border: 3px solid #f8f9fa;">
+                    <div class="text-center text-sm-start d-flex flex-column h-100 flex-grow-1">
+                        <h4 class="fw-bold mb-1 text-dark">章佳宜</h4>
+                        <p class="text-primary small mb-3 fw-medium">硕士研究生</p>
+                        <div class="info-item"><span class="info-icon"><i class="fas fa-envelope"></i></span><span class="info-value text-muted fst-italic">暂无</span></div>
+                        <div class="info-item"><span class="info-icon"><i class="fas fa-map-marker-alt"></i></span><span class="info-value">安徽省安庆市桐城县</span></div>
+                        <div class="info-item"><span class="info-icon"><i class="fas fa-star"></i></span><span class="info-value">看书</span></div>
+                        <div class="mt-auto pt-2 text-center text-sm-start"><div class="research-tag"><i class="fas fa-microscope me-1"></i> 无源域适应</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="d-flex flex-column flex-sm-row align-items-center align-items-sm-start p-4 bg-white rounded-4 shadow-sm transition-hover h-100">
+                    <img src="assets/images/stu_yinmengyu.jpg" alt="尹梦雨" class="rounded-3 shadow-sm mb-3 mb-sm-0 me-sm-4 flex-shrink-0" style="width: 120px; height: 160px; object-fit: cover; border: 3px solid #f8f9fa;">
+                    <div class="text-center text-sm-start d-flex flex-column h-100 flex-grow-1">
+                        <h4 class="fw-bold mb-1 text-dark">尹梦雨</h4>
+                        <p class="text-primary small mb-3 fw-medium">硕士研究生</p>
+                        <div class="info-item"><span class="info-icon"><i class="fas fa-envelope"></i></span><span class="info-value">yin410420@163.com</span></div>
+                        <div class="info-item"><span class="info-icon"><i class="fas fa-map-marker-alt"></i></span><span class="info-value">河南省周口市</span></div>
+                        <div class="info-item"><span class="info-icon"><i class="fas fa-star"></i></span><span class="info-value">吃喝玩乐</span></div>
+                        <div class="mt-auto pt-2 text-center text-sm-start"><div class="research-tag"><i class="fas fa-microscope me-1"></i> 无源域适应</div></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <footer class="text-center">
-        <p class="small mb-0">&copy; 2026 Secure AI Team, Hefei University.</p>
-    </footer>
-
+    <footer class="text-center"><p class="small mb-0">&copy; 2026 Secure AI Team, Hefei University.</p></footer>
 </body>
 </html>
