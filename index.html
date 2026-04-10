@@ -9,132 +9,35 @@
     <style>
         /* 基础与平滑滚动 */
         html { scroll-behavior: smooth; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            color: #333;
-            padding-top: 76px;
-            background-color: #fcfdfd;
-            overflow-x: hidden;
-        }
-
-        /* 统一学术蓝 */
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; color: #333; padding-top: 76px; background-color: #fcfdfd; overflow-x: hidden; }
         :root { --academic-blue: #003366; --accent-blue: #3498db; }
-
-        /* 1. 丝滑导航栏 */
-        .navbar {
-            background-color: var(--academic-blue);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            transition: all 0.4s ease;
-        }
+        .navbar { background-color: var(--academic-blue); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); transition: all 0.4s ease; }
         .navbar-brand { font-weight: 700; letter-spacing: 0.5px; color: #fff !important; }
-        .nav-link {
-            color: rgba(255, 255, 255, 0.75) !important;
-            font-weight: 500;
-            margin: 0 4px;
-            border-radius: 6px;
-            transition: all 0.3s ease;
-        }
-        .nav-link:hover, .nav-link.active {
-            color: #fff !important;
-            background-color: rgba(255, 255, 255, 0.15);
-            transform: translateY(-1px);
-        }
-
-        /* 2. 巨幕区 (Hero) - 增加微渐变 */
-        .hero-section {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            padding: 100px 0;
-            position: relative;
-        }
+        .nav-link { color: rgba(255, 255, 255, 0.75) !important; font-weight: 500; margin: 0 4px; border-radius: 6px; transition: all 0.3s ease; }
+        .nav-link:hover, .nav-link.active { color: #fff !important; background-color: rgba(255, 255, 255, 0.15); transform: translateY(-1px); }
+        .hero-section { background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); padding: 100px 0; position: relative; }
         .hero-section p { font-size: 1.1rem; color: #555; }
-
-        /* 3. 标题与通用修饰 */
-        .section-title {
-            font-weight: 700;
-            color: #2c3e50;
-            position: relative;
-            padding-bottom: 12px;
-            margin-bottom: 50px;
-            display: inline-block;
-        }
-        .section-title::after {
-            content: '';
-            position: absolute;
-            left: 0; bottom: 0;
-            width: 40%; height: 4px;
-            background-color: var(--accent-blue);
-            border-radius: 2px;
-        }
-
-        /* 4. 卡片悬停特效 (玻璃拟物化阴影) */
-        .card {
-            border: none;
-            border-radius: 16px;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            background: #fff;
-        }
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08) !important;
-        }
-        .icon-box {
-            width: 64px; height: 64px;
-            background: rgba(52, 152, 219, 0.1);
-            color: var(--accent-blue);
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 28px;
-            margin: 0 auto 20px;
-        }
-
-        /* 5. 论文列表交互 */
-        .pub-item {
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 4px solid transparent;
-            transition: all 0.3s ease;
-        }
-        .pub-item:hover {
-            background-color: rgba(52, 152, 219, 0.04);
-            border-left: 4px solid var(--accent-blue);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
-            transform: translateX(5px);
-        }
-
-        /* 6. 页脚优化 */
-        footer {
-            background-color: var(--academic-blue);
-            color: rgba(255, 255, 255, 0.8);
-            border-top: 5px solid var(--accent-blue);
-        }
+        .section-title { font-weight: 700; color: #2c3e50; position: relative; padding-bottom: 12px; margin-bottom: 50px; display: inline-block; }
+        .section-title::after { content: ''; position: absolute; left: 0; bottom: 0; width: 40%; height: 4px; background-color: var(--accent-blue); border-radius: 2px; }
+        .card { border: none; border-radius: 16px; transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); background: #fff; }
+        .card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08) !important; }
+        .icon-box { width: 64px; height: 64px; background: rgba(52, 152, 219, 0.1); color: var(--accent-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; margin: 0 auto 20px; }
+        .pub-item { padding: 15px; border-radius: 8px; border-left: 4px solid transparent; transition: all 0.3s ease; }
+        .pub-item:hover { background-color: rgba(52, 152, 219, 0.04); border-left: 4px solid var(--accent-blue); box-shadow: 0 4px 12px rgba(0,0,0,0.02); transform: translateX(5px); }
+        footer { background-color: var(--academic-blue); color: rgba(255, 255, 255, 0.8); border-top: 5px solid var(--accent-blue); }
         footer a { color: var(--accent-blue); transition: color 0.3s; text-decoration: none; }
         footer a:hover { color: #fff; text-decoration: underline; }
         footer h3 { color: #fff; font-weight: 600; }
-
-        /* 7. 🚀 进场浮现动画 (大厂高级感来源) */
-        .reveal-up {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-        .reveal-up.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* 移动端特殊适配 */
-        @media (max-width: 768px) {
-            .hero-section { padding: 60px 0; }
-            .hero-section p { width: 95% !important; text-align: left !important; }
-            .pub-item:hover { transform: none; } /* 手机端取消平移以免误触 */
-        }
+        .reveal-up { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .reveal-up.active { opacity: 1; transform: translateY(0); }
+        @media (max-width: 768px) { .hero-section { padding: 60px 0; } .hero-section p { width: 95% !important; text-align: left !important; } .pub-item:hover { transform: none; } }
     </style>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="90">
 
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="#page-top">🛡️ Secure Artificial Intelligence Team</a>
+            <a class="navbar-brand" href="index.html">🛡️ Secure AI Team</a>
             <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -144,14 +47,14 @@
                     <li class="nav-item"><a class="nav-link" href="#news">最新动态</a></li>
                     <li class="nav-item"><a class="nav-link" href="#research">研究方向</a></li>
                     <li class="nav-item"><a class="nav-link" href="#publications">学术成果</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#team">团队成员</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#downloads">资料下载</a></li>
+                    <li class="nav-item"><a class="nav-link" href="team.html">团队成员</a></li>
+                    <li class="nav-item"><a class="nav-link" href="downloads.html">资料下载</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-<header id="page-top" class="hero-section text-center reveal-up">
+    <header id="page-top" class="hero-section text-center reveal-up">
         <div class="container">
             <h1 class="display-4 fw-bold text-dark">安全人工智能团队</h1>
             <h2 class="h5 text-secondary mt-3 mb-4 fw-light">Secure Artificial Intelligence Team @ Hefei University</h2>
@@ -162,7 +65,7 @@
         </div>
     </header>
 
-  <section id="news" class="container py-5 reveal-up">
+    <section id="news" class="container py-5 reveal-up">
         <h2 class="section-title"> 最新动态 (News)</h2>
         
         <div class="row g-5 align-items-center mb-5 pb-4 border-bottom">
@@ -177,14 +80,11 @@
             <div class="col-md-7">
                 <h3 class="fw-bold text-dark mb-3">无源域适应领域取得重大突破，论文 NRFP 被 CVPR 2026 录用</h3>
                 <p class="text-secondary lh-lg text-start">
-                    <strong>[2026.03]</strong> 团队最新研究工作 <i>"NRFP: A Noise-Robust Feature Plugin for Source-Free Domain Adaptation"</i> 正式被计算机视觉顶级会议 <strong>CVPR 2026 (CCF-A类)</strong> 录用。该研究聚焦无源域适应（SFDA）中“数据增强诱发噪声”的痛点，创新性地提出了一种即插即用的噪声鲁棒特征插件。通过引入双效机制（AIGC 纯净先验 ASGS 与特征级对抗互斥 MESGS），成功强制模型剥离表面干扰、提取内在语义，在多项主流基准测试中全面刷新了 SOTA 性能。
+                    <strong>[2026.03]</strong> 团队最新研究工作 <i>"NRFP: A Noise-Robust Feature Plugin for Source-Free Domain Adaptation"</i> 正式被计算机视觉顶级会议 <strong>CVPR 2026 (CCF-A类)</strong> 录用。该研究聚焦无源域适应（SFDA）中“数据增强诱发噪声”的痛点，创新性地提出了一种即插即用的噪声鲁棒特征插件。
                 </p>
                 <div class="mt-3">
                     <span class="badge bg-primary-subtle text-primary border border-primary-subtle p-2 px-3 me-2">无源域适应 (SFDA)</span>
                     <span class="badge bg-light text-dark border p-2 px-3">特征提取</span>
-                </div>
-                <div class="mt-4">
-                    <a href="#" class="btn btn-sm btn-primary rounded-pill px-4 me-2 shadow-sm">Project Page</a>
                 </div>
             </div>
         </div>
@@ -201,12 +101,11 @@
             <div class="col-md-7">
                 <h3 class="fw-bold text-dark mb-3">安全 AI 领域新进展：面向图卷积骨架动作识别的空间视点转移攻击研究</h3>
                 <p class="text-secondary lh-lg text-start">
-                    <strong>[2026.02]</strong> 团队在安全人工智能方向取得最新进展，完成研究论文 <i>"Spatial Viewpoint Shift Attack on Graph Convolutional Skeleton Action Recognition"</i>（目前正在审稿中）。该研究深入探讨了限制基于骨架模型对抗迁移性的架构归纳偏差问题。团队提出了一种空间梯度阻尼器与基于视点的约束机制，在保持视觉上合理的骨骼运动的同时，显著增强了对抗样本在不同 GCN 架构间的可迁移性。相关代码已开源。
+                    <strong>[2026.02]</strong> 团队在安全人工智能方向取得最新进展，完成研究论文 <i>"Spatial Viewpoint Shift Attack on Graph Convolutional Skeleton Action Recognition"</i>（目前正在审稿中）。团队提出了一种空间梯度阻尼器与基于视点的约束机制，显著增强了对抗样本在不同 GCN 架构间的可迁移性。相关代码已开源。
                 </p>
                 <div class="mt-3">
                     <span class="badge bg-danger-subtle text-danger border border-danger-subtle p-2 px-3 me-2">AI 安全</span>
                     <span class="badge bg-light text-dark border p-2 px-3">图卷积网络 (GCN)</span>
-                    <span class="badge bg-light text-dark border p-2 px-3">对抗攻击</span>
                 </div>
                 <div class="mt-4">
                     <a href="https://github.com/MilkyWay123123/SVAttack" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill px-4">🔗 GitHub Code</a>
@@ -248,7 +147,6 @@
   <section id="publications" class="container py-5 reveal-up">
         <h2 class="section-title text-center d-block mx-auto"> 学术成果 (Publications)</h2>
         <div class="mt-4 publication-list">
-            
              <div class="pub-item mb-3 border-bottom pb-3">
                 <h5 class="fw-bold mb-2">Fair face forgery detection via cross-domain decoupling and entropy-adaptive enhancement</h5>
                 <p class="mb-2 text-secondary">
@@ -269,285 +167,10 @@
                     <strong>Zhize Wu</strong>, Yue Ding, Long Wan, et al. 
                     <span class="text-dark"><i>Pattern Recognition</i></span>, 2025, 159: 111106. 
                     <span class="badge bg-primary-subtle text-primary border border-primary-subtle ms-1">SCI Q1</span>
-                    <span class="badge bg-info-subtle text-info border border-info-subtle ms-1">CAAI-A</span>
-                </p>
-                <div class="pub-links">
-                    <a href="#" class="btn btn-sm btn-outline-primary rounded-pill px-3 py-1 me-2">PDF</a>
-                    <a href="#" class="btn btn-sm btn-outline-dark rounded-pill px-3 py-1">Code</a>
-                </div>
-            </div>
-
-            <div class="pub-item mb-3 border-bottom pb-3">
-                <h5 class="fw-bold mb-2">SelfGCN: Graph Convolution Network With Self-Attention for Skeleton-Based Action Recognition</h5>
-                <p class="mb-2 text-secondary">
-                    <strong>Zhize Wu</strong>, Pengpeng Sun, Xin Chen, et al. 
-                    <span class="text-dark"><i>IEEE Transactions on Image Processing</i></span>, 2024, 33: 4391-4403. 
-                    <span class="badge bg-danger-subtle text-danger border border-danger-subtle ms-1">CCF-A</span>
-                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle ms-1">SCI Q1</span>
-                </p>
-                <div class="pub-links">
-                    <a href="#" class="btn btn-sm btn-outline-primary rounded-pill px-3 py-1 me-2">PDF</a>
-                    <a href="#" class="btn btn-sm btn-outline-dark rounded-pill px-3 py-1">Code</a>
-                </div>
-            </div>
-
-            <div class="pub-item mb-3 border-bottom pb-3">
-                <h5 class="fw-bold mb-2">Frequency Fitness Assignment: Optimization without a Bias for Good Solutions can be Efficient</h5>
-                <p class="mb-2 text-secondary">
-                    Thomas Weise, <strong>Zhize Wu</strong>, Xinlu Li, et al. 
-                    <span class="text-dark"><i>IEEE Transactions on Evolutionary Computation</i></span>, 2023, 27(4): 980-992. 
-                    <span class="badge bg-info-subtle text-info border border-info-subtle ms-1">CAAI-A</span>
-                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle ms-1">SCI Q1</span>
                 </p>
                 <div class="pub-links">
                     <a href="#" class="btn btn-sm btn-outline-primary rounded-pill px-3 py-1 me-2">PDF</a>
                 </div>
-            </div>
-
-             <div class="pub-item mb-3 border-bottom pb-3">
-                <h5 class="fw-bold mb-2">Hierarchical Fusion and Divergent Activation based Weakly Supervised Learning for Object Detection from Remote Sensing Images</h5>
-                <p class="mb-2 text-secondary">
-                    <strong>Zhize Wu</strong>, Jian Xu, Yan Wang, et al. 
-                    <span class="text-dark"><i>Information Fusion</i></span>, 2022, 80: 23-43. 
-                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle ms-1">SCI Q1</span>
-                    <span class="badge bg-info-subtle text-info border border-info-subtle ms-1">CAAI-A</span>
-                </p>
-                <div class="pub-links">
-                    <a href="#" class="btn btn-sm btn-outline-primary rounded-pill px-3 py-1 me-2">PDF</a>
-                    <a href="#" class="btn btn-sm btn-outline-dark rounded-pill px-3 py-1">Code</a>
-                </div>
-            </div>
-
-            <div class="pub-item mb-3 border-bottom pb-3">
-                <h5 class="fw-bold mb-2">A New Benchmark for Household Garbage Image Recognition</h5>
-                <p class="mb-2 text-secondary">
-                    <strong>Zhize Wu</strong>, Huanyi Li, Xiaofeng Wang, et al. 
-                    <span class="text-dark"><i>Tsinghua Science and Technology</i></span>, 2022, 27(5): 793-803. 
-                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle ms-1">SCI Q1</span>
-                </p>
-                <div class="pub-links">
-                    <a href="#" class="btn btn-sm btn-outline-primary rounded-pill px-3 py-1 me-2">PDF</a>
-                </div>
-            </div>
-
-            <div class="pub-item mb-3 border-bottom pb-3">
-                <h5 class="fw-bold mb-2">Rotation-Aware Representation Learning for Remote Sensing Image Retrieval</h5>
-                <p class="mb-2 text-secondary">
-                    <strong>Zhize Wu</strong>, Chang Zou, Yan Wang, et al. 
-                    <span class="text-dark"><i>Information Science</i></span>, 2021, 572: 404-423. 
-                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle ms-1">SCI Q1</span>
-                </p>
-                <div class="pub-links">
-                    <a href="#" class="btn btn-sm btn-outline-primary rounded-pill px-3 py-1 me-2">PDF</a>
-                </div>
-            </div>
-
-            <div class="pub-item mb-3 border-bottom pb-3">
-                <h5 class="fw-bold mb-2">Hierarchical Object Detection for Very High-resolution Satellite Images</h5>
-                <p class="mb-2 text-secondary">
-                    <strong>Zhize Wu</strong>, Xiaofeng Wang, Le Zou, et al. 
-                    <span class="text-dark"><i>Applied Soft Computing</i></span>, 2021, 114(Part A): 107885. 
-                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle ms-1">SCI Q1</span>
-                </p>
-                <div class="pub-links">
-                    <a href="#" class="btn btn-sm btn-outline-primary rounded-pill px-3 py-1 me-2">PDF</a>
-                </div>
-            </div>
-
-            <div class="pub-item mb-3 border-bottom pb-3">
-                <h5 class="fw-bold mb-2">A Benchmark Data Set for Aircraft Type Recognition from Remote Sensing Images</h5>
-                <p class="mb-2 text-secondary">
-                    <strong>Zhize Wu</strong>, Shouhong Wan, Xiaofeng Wang, et al. 
-                    <span class="text-dark"><i>Applied Soft Computing</i></span>, 2020, 89: 106132. 
-                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle ms-1">SCI Q1</span>
-                </p>
-                <div class="pub-links">
-                    <a href="#" class="btn btn-sm btn-outline-primary rounded-pill px-3 py-1 me-2">PDF</a>
-                </div>
-            </div>
-
-            <div class="pub-item mb-3 border-bottom pb-3">
-                <h5 class="fw-bold mb-2">Autoencoder-based feature learning from a 2D depth map and 3D skeleton for action recognition</h5>
-                <p class="mb-2 text-secondary">
-                    <strong>Zhize Wu</strong>, Shouhong Wan, Li Yan, et al. 
-                    <span class="text-dark"><i>Journal of Computers</i></span>, 2018, 29(4): 82-95. 
-                    <span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle ms-1">EI</span>
-                </p>
-                <div class="pub-links">
-                    <a href="#" class="btn btn-sm btn-outline-primary rounded-pill px-3 py-1 me-2">PDF</a>
-                </div>
-            </div>
-
-            <div class="pub-item mb-3">
-                <h5 class="fw-bold mb-2">Replicable Self-Documenting Experiments with Arbitrary Search Spaces and Algorithms</h5>
-                <p class="mb-2 text-secondary">
-                    Thomas Weise, <strong>Zhize Wu</strong>. 
-                    <span class="text-dark"><i>GECCO Companion</i></span>, 2023: 1891-1899. 
-                    <span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle ms-1">EI</span>
-                    <span class="badge bg-dark-subtle text-dark border border-dark-subtle ms-1">CCF Recommended</span>
-                </p>
-                <div class="pub-links">
-                    <a href="#" class="btn btn-sm btn-outline-primary rounded-pill px-3 py-1 me-2">PDF</a>
-                </div>
-            </div>
-            
-        </div>
-    </section>
-
-    <section id="team" class="py-5 bg-light">
-        <div class="container reveal-up">
-            <h2 class="section-title"> 团队成员 (People)</h2>
-            
-<h3 class="h5 mt-4 mb-5 fw-bold text-dark">指导教师 (Faculty & Mentors)</h3>
-        
-        <div class="row g-4 mb-5">
-            
-            <div class="col-lg-6">
-                <div class="d-flex flex-column flex-sm-row align-items-center align-items-sm-start p-4 bg-white rounded-4 shadow-sm transition-hover h-100">
-                    <img src="assets/images/prof-wu.jpg" alt="吴志泽教授" class="rounded-3 shadow-sm mb-3 mb-sm-0 me-sm-4 flex-shrink-0" style="width: 120px; height: 160px; object-fit: cover; border: 4px solid #f8f9fa;">
-                    
-                    <div class="text-center text-sm-start d-flex flex-column h-100">
-                        <h4 class="fw-bold mb-1 text-dark">吴志泽</h4>
-                        <p class="text-primary small mb-2 fw-medium">教授 (Professor) | 人工智能与大数据学院 副院长</p>
-                        <p class="text-secondary small lh-lg mb-3 flex-grow-1" style="text-align: justify; font-size: 0.9rem;">
-                            安徽省青年拔尖人才，安徽省优秀青年研究生导师。研究方向主要集中在安全人工智能、深度学习驱动的视频与图像处理、多模态感知计算及算法优化等领域。
-                        </p>
-                        <div class="d-flex flex-wrap justify-content-center justify-content-sm-start gap-2 mt-auto">
-                            <a href="mailto:wuzz@hfuu.edu.cn" class="btn btn-sm btn-light text-secondary rounded-pill px-3 shadow-sm" style="font-size: 0.8rem;">📧 wuzz@hfuu.edu.cn</a>
-                            <a href="https://www.hfuu.edu.cn/aibd/d5/4a/c7158a120138/page.htm" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill px-3 shadow-sm" style="font-size: 0.8rem;">🏠 个人主页</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-6">
-                <div class="d-flex flex-column flex-sm-row align-items-center align-items-sm-start p-4 bg-white rounded-4 shadow-sm transition-hover h-100">
-                    <img src="assets/images/prof-sun.jpg" alt="孙斐教授" class="rounded-3 shadow-sm mb-3 mb-sm-0 me-sm-4 flex-shrink-0" style="width: 120px; height: 160px; object-fit: cover; border: 4px solid #f8f9fa;">
-                    
-                    <div class="text-center text-sm-start d-flex flex-column h-100">
-                        <h4 class="fw-bold mb-1 text-dark">孙斐</h4>
-                        <p class="text-primary small mb-2 fw-medium">教授 (Professor)</p>
-                        <p class="text-secondary small lh-lg mb-3 flex-grow-1" style="text-align: justify; font-size: 0.9rem;">
-                            目前担任安徽省信息标准化技术委员会、数字安徽专家委员会、安徽省数字化发展标准化技术委员会、安徽省公安厅安全技术防范领域、安徽省应急管理厅科技装备与信息化专家组、安徽省气象局防雷与接地、安徽省安全技术防范协会等行业协会专家委员，主要从事计算机视觉与图像处理、安全技术防范、自动化控制等应用领域的研究。
-                        </p>
-                        <div class="d-flex flex-wrap justify-content-center justify-content-sm-start gap-2 mt-auto">
-                            <a href="mailto:sunfei@hfuu.edu.cn" class="btn btn-sm btn-light text-secondary rounded-pill px-3 shadow-sm" style="font-size: 0.8rem;">📧 sunfei@hfuu.edu.cn</a>
-                            <a href="https://www.hfuu.edu.cn/aibd/ee/dd/c7158a126685/page.htm" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill px-3 shadow-sm" style="font-size: 0.8rem;">🏠 个人主页</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-6">
-                <div class="d-flex flex-column flex-sm-row align-items-center align-items-sm-start p-4 bg-white rounded-4 shadow-sm transition-hover h-100">
-                    <img src="assets/images/prof-wang.jpg" alt="汪自旺讲师" class="rounded-3 shadow-sm mb-3 mb-sm-0 me-sm-4 flex-shrink-0" style="width: 120px; height: 160px; object-fit: cover; border: 4px solid #f8f9fa;">
-                    
-                    <div class="text-center text-sm-start d-flex flex-column h-100">
-                        <h4 class="fw-bold mb-1 text-dark">汪自旺</h4>
-                        <p class="text-primary small mb-2 fw-medium">讲师 (Lecturer)</p>
-                        <p class="text-secondary small lh-lg mb-3 flex-grow-1" style="text-align: justify; font-size: 0.9rem;">
-                            主要从事区块链、信息安全、人工智能、可信计算、移动终端安全等方面的研究工作。
-                        </p>
-                        <div class="d-flex flex-wrap justify-content-center justify-content-sm-start gap-2 mt-auto">
-                            <a href="mailto:wangzw@hfuu.edu.cn" class="btn btn-sm btn-light text-secondary rounded-pill px-3 shadow-sm" style="font-size: 0.8rem;">📧 wangzw@hfuu.edu.cn</a>
-                           
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-6">
-                <div class="d-flex flex-column flex-sm-row align-items-center align-items-sm-start p-4 bg-white rounded-4 shadow-sm transition-hover h-100">
-                    <img src="assets/images/prof-jiang.jpg" alt="蒋越讲师" class="rounded-3 shadow-sm mb-3 mb-sm-0 me-sm-4 flex-shrink-0" style="width: 120px; height: 160px; object-fit: cover; border: 4px solid #f8f9fa;">
-                    
-                    <div class="text-center text-sm-start d-flex flex-column h-100">
-                        <h4 class="fw-bold mb-1 text-dark">蒋越</h4>
-                        <p class="text-primary small mb-2 fw-medium">讲师 (Lecturer)</p>
-                        <p class="text-secondary small lh-lg mb-3 flex-grow-1" style="text-align: justify; font-size: 0.9rem;">
-                            研究方向涉及深度学习算法优化及多模态数据处理。致力于解决实际工业场景中的视觉识别难题。
-                        </p>
-                        <div class="d-flex flex-wrap justify-content-center justify-content-sm-start gap-2 mt-auto">
-                            <a href="mailto:jiangyue@hfuu.edu.cn" class="btn btn-sm btn-light text-secondary rounded-pill px-3 shadow-sm" style="font-size: 0.8rem;">📧 jiangyue@hfuu.edu.cn</a>
-                            <a href="https://github.com/449066296" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill px-3 shadow-sm" style="font-size: 0.8rem;">🏠 个人主页</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        </div> 
-
-            <h3 class="h5 mt-5 mb-4 fw-bold text-dark">在读研究生 (Graduate Students)</h3>
-            <div class="card shadow-sm border-0 p-4 p-md-5">
-                <p class="text-secondary mb-4 lh-lg">团队深耕于计算机视觉与 AI 安全领域，致力于推进对抗攻击与防御、域适应等核心课题。</p>
-                
-                <h6 class="text-primary fw-bold mb-3" style="border-left: 3px solid #3498db; padding-left: 10px;">2023级</h6>
-                <div class="d-flex flex-wrap gap-2 mb-4">
-                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill">👨‍🎓 秦世杰</span>
-                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill">👨‍🎓 魏宏伟</span>
-                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill">👩‍🎓 吴莹莹</span>
-                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill">👩‍🎓 张敏</span>
-                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill">👨‍🎓 张韦</span>
-                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill">👨‍🎓 邹焕鑫</span>
-                </div>
-
-                <h6 class="text-primary fw-bold mb-3" style="border-left: 3px solid #3498db; padding-left: 10px;">2024级</h6>
-                <div class="d-flex flex-wrap gap-2 mb-4">
-                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill">👨‍🎓 华善聪</span>
-                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill">👨‍🎓 李鼎</span>
-                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill">👨‍🎓 鹿梦浩</span>
-                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill">👨‍🎓 孟杰</span>
-                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill">👨‍🎓 张亚微</span>
-                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill">👨‍🎓 周基健</span>
-                </div>
-
-                <h6 class="text-primary fw-bold mb-3" style="border-left: 3px solid #3498db; padding-left: 10px;">2025级</h6>
-                <div class="d-flex flex-wrap gap-2">
-                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill">👨‍🎓 付余涛</span>
-                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill">👨‍🎓 洪志陈</span>
-                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill">👩‍🎓 荣子怡</span>
-                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill">👨‍🎓 王鹏松</span>
-                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill">👩‍🎓 夏雨萱</span>
-                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill">👨‍🎓 姚俊豪</span>
-                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill">👩‍🎓 尹梦雨</span>
-                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill">👩‍🎓 章佳宜</span>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section id="downloads" class="py-5 bg-light">
-        <div class="container reveal-up">
-            <h2 class="section-title">资料下载 (Resources)</h2>
-            <p class="text-secondary mb-5">汇集团队开源代码、经典论文导读、深度学习入门视频。</p>
-            
-            <div class="row g-4">
-                
-                <div class="col-md-6">
-                    <div class="card p-4 h-100 shadow-sm" style="border-top: 4px solid var(--accent-blue);">
-                        <h4 class="fw-bold mb-4 text-dark d-flex align-items-center">
-                            <span style="font-size: 1.5rem; margin-right: 10px;">📄</span> 论文与代码
-
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="card p-4 h-100 shadow-sm" style="border-top: 4px solid #e74c3c;">
-                        <h4 class="fw-bold mb-4 text-dark d-flex align-items-center">
-                            <span style="font-size: 1.5rem; margin-right: 10px;">🎬</span> 课程视频
-                        </h4>
-                        
-                        <div class="list-group list-group-flush">
-                            <div class="list-group-item bg-transparent px-0 py-3 d-flex justify-content-between align-items-center border-bottom">
-                                <div>
-                                    <h6 class="mb-1 fw-bold">MIT何恺明深度学习教学视频（持续更新中）</h6>
-                                    <small class="text-secondary">研一新生入门推荐</small>
-                                </div>
-                                <a href="https://drive.google.com/drive/folders/1hRCwNspINjLUa8OhjznTcR-M175eH6wo" target="_blank" class="btn btn-sm btn-outline-danger rounded-pill px-3 flex-shrink-0 ms-3">▶ 进入</a>
-                            </div>
-
-
             </div>
         </div>
     </section>
@@ -568,54 +191,17 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // 1. 移动端：点击菜单项后自动收起
-            const navLinks = document.querySelectorAll('.nav-link');
-            const menuToggle = document.getElementById('navbarResponsive');
-            const bsCollapse = new bootstrap.Collapse(menuToggle, {toggle: false});
-            
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    if (menuToggle.classList.contains('show')) {
-                        bsCollapse.toggle();
-                    }
-                });
-            });
-
-            // 2. 丝滑滚动监听与激活
-            const sections = document.querySelectorAll('section, header');
-            const navBarHeight = 76;
-            
-            window.addEventListener('scroll', () => {
-                let current = '';
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    if (window.scrollY >= (sectionTop - navBarHeight - 100)) {
-                        current = section.getAttribute('id');
-                    }
-                });
-
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${current}`) {
-                        link.classList.add('active');
-                    }
-                });
-            });
-
-            // 3. 进场动画 (Scroll Reveal)
             const revealElements = document.querySelectorAll('.reveal-up');
             const revealObserver = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('active');
-                        observer.unobserve(entry.target); // 动画只执行一次
+                        observer.unobserve(entry.target);
                     }
                 });
             }, { rootMargin: "0px 0px -50px 0px" });
-
             revealElements.forEach(el => revealObserver.observe(el));
         });
     </script>
