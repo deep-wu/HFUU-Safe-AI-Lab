@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>资料下载 | Secure AI Team</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: #333; padding-top: 76px; background-color: #fcfdfd; }
+        :root { --academic-blue: #003366; --accent-blue: #3498db; }
+        .navbar { background-color: var(--academic-blue); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); }
+        .navbar-brand { font-weight: 700; color: #fff !important; }
+        .nav-link { color: rgba(255, 255, 255, 0.75) !important; font-weight: 500; margin: 0 4px; border-radius: 6px;}
+        .nav-link:hover, .nav-link.active { color: #fff !important; background-color: rgba(255, 255, 255, 0.15); }
+        .section-title { font-weight: 700; color: #2c3e50; padding-bottom: 12px; border-bottom: 4px solid var(--accent-blue); display: inline-block; margin-bottom: 20px; }
+        footer { background-color: var(--academic-blue); color: rgba(255, 255, 255, 0.8); padding: 20px 0; border-top: 5px solid var(--accent-blue); margin-top: 50px;}
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">🛡️ Secure AI Team</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">返回首页</a></li>
+                    <li class="nav-item"><a class="nav-link" href="team.html">团队成员</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="downloads.html">资料下载</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5 mb-5">
+        <h2 class="section-title">📥 资料中心 (Resources)</h2>
+        <p class="text-secondary mb-5">汇集团队开源代码、经典论文导读、深度学习入门视频。</p>
+        
+        <div class="row g-4">
+            
+            <div class="col-md-6">
+                <div class="card p-4 h-100 shadow-sm border-0" style="border-top: 4px solid var(--accent-blue) !important; border-radius: 12px;">
+                    <h4 class="fw-bold mb-4 text-dark d-flex align-items-center">
+                        <span style="font-size: 1.5rem; margin-right: 10px;">📄</span> 论文与代码
+                    </h4>
+                    <div class="list-group list-group-flush">
+                        <div class="list-group-item px-0 py-3 d-flex justify-content-between align-items-center border-bottom">
+                            <div>
+                                <h6 class="mb-1 fw-bold">SVAttack 空间视点转移攻击源码</h6>
+                                <small class="text-secondary">包含完整的图卷积网络 (GCN) 对抗攻击复现环境</small>
+                            </div>
+                            <a href="https://github.com/MilkyWay123123/SVAttack" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill px-3 flex-shrink-0 ms-3">获取代码</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card p-4 h-100 shadow-sm border-0" style="border-top: 4px solid #e74c3c !important; border-radius: 12px;">
+                    <h4 class="fw-bold mb-4 text-dark d-flex align-items-center">
+                        <span style="font-size: 1.5rem; margin-right: 10px;">🎬</span> 课程视频
+                    </h4>
+                    <div class="list-group list-group-flush">
+                        <div class="list-group-item bg-transparent px-0 py-3 d-flex justify-content-between align-items-center border-bottom">
+                            <div>
+                                <h6 class="mb-1 fw-bold">MIT何恺明深度学习教学视频（持续更新中）</h6>
+                                <small class="text-secondary">研一新生入门推荐</small>
+                            </div>
+                            <a href="https://drive.google.com/drive/folders/1hRCwNspINjLUa8OhjznTcR-M175eH6wo" target="_blank" class="btn btn-sm btn-outline-danger rounded-pill px-3 flex-shrink-0 ms-3">▶ 进入</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="text-center">
+        <p class="small mb-0">&copy; 2026 Secure AI Team, Hefei University.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
