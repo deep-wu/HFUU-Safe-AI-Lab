@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Hefei University AI Safety Lab | 合肥大学安全人工智能团队</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     
     <style>
         /* 基础与平滑滚动 */
@@ -66,9 +67,51 @@
     </header>
 
     <section id="news" class="container py-5 reveal-up">
-        <h2 class="section-title"> 最新动态 (News)</h2>
+        <h2 class="section-title">📌 最新动态 (News)</h2>
         
         <div class="row g-5 align-items-center mb-5 pb-4 border-bottom">
+            <div class="col-md-5">
+                <div class="position-relative">
+                    <img src="assets/images/fair-face-framework.png" alt="Fair Face Forgery Detection Framework" class="img-fluid rounded-4 shadow">
+                    <div class="position-absolute top-0 start-0 m-3">
+                        <span class="badge bg-primary shadow px-3 py-2 rounded-pill">🏆 PR 2026</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <h3 class="fw-bold text-dark mb-3">突破人脸伪造检测瓶颈，公平性与泛化性研究被顶级期刊 Pattern Recognition 录用</h3>
+                <p class="text-secondary lh-lg text-start">
+                    <strong>[2026.04]</strong> 团队在人脸伪造检测（Deepfake Detection）领域取得重要进展，研究论文 <i>"Fair face forgery detection via cross-domain decoupling and entropy-adaptive enhancement"</i> 被国际顶级期刊 <strong>Pattern Recognition (SCI Q1, 中科院一区)</strong> 录用。该工作提出了一种新颖的跨域解耦框架，有效剥离了与人口统计学相关的属性特征，并结合熵自适应增强策略，在多个基准数据集上显著提升了伪造检测的公平性与跨域泛化能力。
+                </p>
+                <div class="mt-3">
+                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle p-2 px-3 me-2">人脸伪造检测</span>
+                    <span class="badge bg-light text-dark border p-2 px-3">跨域解耦</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-5 align-items-center flex-md-row-reverse mb-5 pb-4 border-bottom">
+            <div class="col-md-5">
+                <div class="position-relative">
+                    <img src="assets/images/dhsnet-framework.png" alt="DHSNet Framework" class="img-fluid rounded-4 shadow">
+                    <div class="position-absolute top-0 start-0 m-3">
+                        <span class="badge bg-success shadow px-3 py-2 rounded-pill">🌟 TMM 2026</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <h3 class="fw-bold text-dark mb-3">微光图像增强新框架 DHSNet 被国际权威期刊 IEEE TMM 录用</h3>
+                <p class="text-secondary lh-lg text-start">
+                    <strong>[2026.04]</strong> 团队最新研究成果 <i>"DHSNet: Denoised-Modulated Hybrid-Semantic Scale-Aware Network for Low-Light Image Enhancement"</i> 正式被多媒体领域国际顶级期刊 <strong>IEEE Transactions on Multimedia (SCI Q1, 中科院一区)</strong> 录用。针对微光图像中常见的噪声和色彩失真问题，研究提出了一种结合信噪比去噪机制与混合语义尺度感知模块的单阶段网络，在图像画质重建与下游高级视觉检测任务中均实现了卓越的性能。
+                </p>
+                <div class="mt-3">
+                    <span class="badge bg-success-subtle text-success border border-success-subtle p-2 px-3 me-2">微光图像增强</span>
+                    <span class="badge bg-light text-dark border p-2 px-3">多尺度特征融合</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-5 align-items-center mb-4">
             <div class="col-md-5">
                 <div class="position-relative">
                     <img src="assets/images/nrfp-framework.png" alt="NRFP Framework" class="img-fluid rounded-4 shadow">
@@ -83,20 +126,16 @@
                     <strong>[2026.03]</strong> 团队最新研究工作 <i>"NRFP: A Noise-Robust Feature Plugin for Source-Free Domain Adaptation"</i> 正式被计算机视觉顶级会议 <strong>CVPR 2026 (CCF-A类)</strong> 录用。该研究聚焦无源域适应（SFDA）中“数据增强诱发噪声”的痛点，创新性地提出了一种即插即用的噪声鲁棒特征插件。
                 </p>
                 <div class="mt-3">
-                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle p-2 px-3 me-2">无源域适应 (SFDA)</span>
+                    <span class="badge bg-danger-subtle text-danger border border-danger-subtle p-2 px-3 me-2">无源域适应 (SFDA)</span>
                     <span class="badge bg-light text-dark border p-2 px-3">特征提取</span>
                 </div>
-            </div>
-        </div>
-
-
             </div>
         </div>
     </section>
 
     <section id="research" class="py-5 bg-light">
         <div class="container reveal-up">
-            <h2 class="section-title"> 研究方向 (Research)</h2>
+            <h2 class="section-title">🔬 研究方向 (Research)</h2>
             <div class="row g-4 justify-content-center">
                 <div class="col-md-6">
                     <div class="card p-4 h-100 shadow-sm" style="border-top: 4px solid #3498db;">
@@ -124,7 +163,7 @@
         </div>
     </section>
 
-<section id="publications" class="container py-5 reveal-up">
+    <section id="publications" class="container py-5 reveal-up">
         <h2 class="section-title text-center d-block mx-auto"> 📄 学术成果 (Publications)</h2>
         <div class="mt-4 publication-list">
             
@@ -272,18 +311,15 @@
             
         </div>
     </section>
-            </div>
-        </div>
-    </section>
 
-   <footer id="join" class="text-center py-5 reveal-up">
+    <footer id="join" class="text-center py-5 reveal-up">
         <div class="container py-4">
             <h3 class="mb-4">💡 加入我们 (Join Us)</h3>
             <p class="col-md-8 mx-auto mb-4 lh-lg">
                 我们常年招收对 <strong>计算机视觉、AI 安全</strong> 充满热忱的研究生。<br>
                 如果你对我们的课题有浓厚的研究兴趣，欢迎将简历发送至导师邮箱。
             </p>
-           <div class="mt-4 mb-5">
+            <div class="mt-4 mb-5">
                 <p class="mb-2"><strong>📬 导师邮箱 (Email):</strong></p>
                 <div class="d-flex flex-wrap justify-content-center gap-3 mb-3 small">
                     <a href="mailto:wuzz@hfuu.edu.cn" class="text-decoration-none">吴志泽: wuzz@hfuu.edu.cn</a>
@@ -304,17 +340,49 @@
                     <i class="fas fa-eye"></i> 本站总访问量: <span id="busuanzi_value_site_pv" class="fw-bold text-white"></span> 次
                 </span>
             </div>
-
         </div>
     </footer>
 
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
+            // 1. 移动端：点击菜单项后自动收起
+            const navLinks = document.querySelectorAll('.nav-link');
+            const menuToggle = document.getElementById('navbarResponsive');
+            const bsCollapse = new bootstrap.Collapse(menuToggle, {toggle: false});
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (menuToggle.classList.contains('show')) {
+                        bsCollapse.toggle();
+                    }
+                });
+            });
+
+            // 2. 丝滑滚动监听与激活
+            const sections = document.querySelectorAll('section, header');
+            const navBarHeight = 76;
+            
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (window.scrollY >= (sectionTop - navBarHeight - 100)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+
+            // 3. 进场动画 (Scroll Reveal)
             const revealElements = document.querySelectorAll('.reveal-up');
             const revealObserver = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
