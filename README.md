@@ -1,19 +1,30 @@
-🛡️ Safe AI Lab Official Website | 合肥大学安全人工智能团队官方主页
+# 🛡️ Hefei University AI Safety Lab | 合肥大学安全人工智能团队主页
 
-[![Deploy Status](https://img.shields.io/badge/Deployment-GitHub%20Pages-success?style=for-the-badge&logo=github)](https://deep-wu.github.io/HFUU-Safe-AI-Lab/)
-[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)]()
-[![Bootstrap](https://img.shields.io/badge/Bootstrap_5.3-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)]()
+欢迎来到合肥大学安全人工智能团队官方网站的代码仓库。本项目是一个纯静态的响应式网页，旨在展示实验室的**最新动态、学术成果、团队成员及开源资料**。
 
-本仓库包含了合肥大学安全人工智能团队 (Safe AI Team @ HFUU)的官方主页源码。团队由吴志泽教授指导，致力于推进前沿的深度学习与安全人工智能技术，构建鲁棒、可信、泛化能力强的多模态 AI 系统。
+网站采用极致轻量化的架构，无需复杂的编译打包过程，修改代码后保存即可实时预览，非常适合学术团队的快速迭代与日常维护。
 
-🌐 访问官网: [https://deep-wu.github.io/HFUU-Safe-AI-Lab/](https://deep-wu.github.io/HFUU-Safe-AI-Lab/)
+---
 
+## 🛠️ 技术栈 (Tech Stack)
+
+- **核心结构**：HTML5 + CSS3 + 原生 JavaScript
+- **UI 框架**：[Bootstrap 5.3.0](https://getbootstrap.com/) (负责响应式网格布局和现代组件)
+- **图标库**：[FontAwesome 6.4.0](https://fontawesome.com/) (用于展示邮箱、定位、PDF、DOI等精美图标)
+- **访问量统计**：[不蒜子 (Busuanzi)](http://ibruce.info/2015/04/04/busuanzi/) (纯前端极简页面浏览量/访客统计)
+
+---
 
 ## 📂 目录结构 (Directory Structure)
 
 ```text
-HFUU-Safe-AI-Lab/
-├── index.html          # 网站主入口文件 
-└── assets/             # 静态资源目录
-    ├── images/         # 网站配图、新闻缩略图、
-    └── papers/         # 团队发表的论文 PDF 存档 
+📁 AI-Safety-Lab-Website
+├── 📄 index.html              # 网站主页（包含实验室简介、最新动态、研究方向、学术成果、页脚联系方式）
+├── 📄 team.html               # 团队概览页（展示指导教师信息及各年级学生入口）
+├── 📄 students_2023.html      # 2023级研究生详情列表
+├── 📄 students_2024.html      # 2024级研究生详情列表
+├── 📄 students_2025.html      # 2025级研究生详情列表
+├── 📄 downloads.html          # 资料下载页（开源代码合集、论文网盘链接、课程视频资料）
+└── 📁 assets                  # 静态资源文件夹
+    ├── 📁 images              # 图片资源（新闻配图、网络架构图如 1.png/2.png，以及学生照片 stu_xxx.jpg）
+    └── 📁 papers              # 本地文献资料（存放在本站的 PDF 文件，如 GraphLoRA.pdf 等）
