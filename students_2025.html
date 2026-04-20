@@ -1,206 +1,172 @@
-<section id="publications" class="container py-5 reveal-up">
-        <h2 class="section-title text-center d-block mx-auto"> 📄 学术成果 (Publications)</h2>
-        <div class="mt-4 publication-list">
-
-            <div class="pub-item mb-3 border-bottom pb-3">
-                <h5 class="fw-bold mb-2">GraphLoRA: Structure-Aware Low-Rank Adaptation for Large Language Model Recommendation</h5>
-                <p class="mb-2 text-secondary">
-                    Lin Mu, Guoji Wang, Li Ni, Lei Sang, <strong>Zhize Wu</strong>, Peiquan Jin, Yiwen Zhang. 
-                    <span class="text-dark"><i>Annual Meeting of the Association for Computational Linguistics (ACL)</i></span>, 2026. 
-                    <span class="badge bg-danger-subtle text-danger border border-danger-subtle ms-1">CCF-A</span>
-                </p>
-                <div class="pub-links">
-                    <a href="assets/papers/GraphLoRA.pdf" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill px-3 py-1 me-2"><i class="fas fa-file-pdf me-1"></i>PDF</a>
-                </div>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025级研究生 | Secure AI Team</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: #333; padding-top: 76px; background-color: #f8f9fa; }
+        :root { --academic-blue: #003366; --accent-blue: #3498db; }
+        .navbar { background-color: var(--academic-blue); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); }
+        .navbar-brand { font-weight: 700; color: #fff !important; }
+        .nav-link { color: rgba(255, 255, 255, 0.75) !important; font-weight: 500; margin: 0 4px; border-radius: 6px;}
+        .nav-link:hover, .nav-link.active { color: #fff !important; background-color: rgba(255, 255, 255, 0.15); }
+        .page-header { text-align: center; margin-bottom: 40px; }
+        .page-header h2 { font-weight: 800; color: var(--academic-blue); }
+        .transition-hover { transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1); }
+        .transition-hover:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,0.08) !important; }
+        .info-item { display: flex; align-items: flex-start; margin-bottom: 8px; font-size: 0.85rem; color: #555; }
+        .info-label { width: 75px; font-weight: 600; color: #666; flex-shrink: 0; }
+        .info-value { word-break: break-all; line-height: 1.5; color: #333; }
+        .research-tag { display: inline-block; background-color: rgba(52, 152, 219, 0.1); color: var(--accent-blue); font-size: 0.8rem; padding: 5px 12px; border-radius: 20px; font-weight: 600; margin-top: 10px;}
+        footer { background-color: var(--academic-blue); color: rgba(255, 255, 255, 0.8); padding: 20px 0; margin-top: 50px; border-top: 5px solid var(--accent-blue);}
+    </style>
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">🛡️ Secure AI Team</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">返回首页</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="team.html">返回团队列表</a></li>
+                </ul>
             </div>
-
-            <div class="pub-item mb-3 border-bottom pb-3">
-                <h5 class="fw-bold mb-2">TalkLoRA: Communication-Aware Mixture of Low-Rank Adaptation for Large Language Models</h5>
-                <p class="mb-2 text-secondary">
-                    Lin Mu, Haiyang Wang, Li Ni, Lei Sang, <strong>Zhize Wu</strong>, Peiquan Jin, Yiwen Zhang. 
-                    <span class="text-dark"><i>Annual Meeting of the Association for Computational Linguistics (ACL)</i></span>, 2026. 
-                    <span class="badge bg-danger-subtle text-danger border border-danger-subtle ms-1">CCF-A</span>
-                </p>
-                <div class="pub-links">
-                    <a href="assets/papers/TalkLoRA.pdf" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill px-3 py-1 me-2"><i class="fas fa-file-pdf me-1"></i>PDF</a>
-                </div>
-            </div>
-            
-             <div class="pub-item mb-3 border-bottom pb-3">
-                <h5 class="fw-bold mb-2">Fair face forgery detection via cross-domain decoupling and entropy-adaptive enhancement</h5>
-                <p class="mb-2 text-secondary">
-                    <strong>Zhize Wu（通讯作者）</strong>, Fan Cheng, Linkai Tian, et al. 
-                    <span class="text-dark"><i>Pattern Recognition</i></span>, 2026, 179: 113673.
-                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle ms-1">SCI Q1</span>
-                    <span class="badge bg-info-subtle text-info border border-info-subtle ms-1">CAAI-A</span>
-                </p>
-                <div class="pub-links">
-                    <a href="assets/papers/2026-PR-Fair_face_forgery.pdf" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill px-3 py-1 me-2"><i class="fas fa-file-pdf me-1"></i>PDF</a>
-                </div>
-            </div>
-
-            <div class="pub-item mb-3 border-bottom pb-3">
-                <h5 class="fw-bold mb-2">DHSNet: Denoised-Modulated Hybrid-Semantic Scale-Aware Network for Low-Light Image Enhancement</h5>
-                <p class="mb-2 text-secondary">
-                    Rentao Yang*(硕士研究生), <strong>Zhize Wu* (共同第一)</strong>, Xiaofeng Wang†, Tong Xu, Fengling Jiang, Amir Hussain, Le Zou†. 
-                    <span class="text-dark"><i>IEEE Transactions on Multimedia</i></span>, 2026, DOI: 10.1109/TMM.2026.3664955. 
-                    <span class="badge bg-danger-subtle text-danger border border-danger-subtle ms-1">CCF-A</span>
-                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle ms-1">中科院1区 TOP</span>
-                </p>
-                <div class="pub-links">
-                    <a href="assets/papers/2026-tmm-DHSNet.pdf" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill px-3 py-1 me-2"><i class="fas fa-file-pdf me-1"></i>PDF</a>
-                </div>
-            </div>
-
-            <div class="pub-item mb-3 border-bottom pb-3">
-                <h5 class="fw-bold mb-2">面向骨架动作识别的生成式对抗攻击</h5>
-                <p class="mb-2 text-secondary">
-                    <strong>吴志泽</strong>, 邹焕鑫, 鹿梦浩, 华善聪, 李腾, 王晓峰. 
-                    <span class="text-dark"><i>北京航空航天大学学报</i></span>, 2026, doi: 10.13700/j.bh.1001-5965.2025.0681. 
-                    <span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle ms-1">EI</span>
-                    <span class="badge bg-dark-subtle text-dark border border-dark-subtle ms-1">中文领军期刊</span>
-                </p>
-                <div class="pub-links">
-                    <a href="assets/papers/2025-0681_flow.pdf" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill px-3 py-1 me-2"><i class="fas fa-file-pdf me-1"></i>PDF</a>
-                </div>
-            </div>
-
-            <div class="pub-item mb-3 border-bottom pb-3">
-                <h5 class="fw-bold mb-2">Efficient Cross-Shard Blockchain Atomic Submission Scheme Based on Pledge Transactions</h5>
-                <p class="mb-2 text-secondary">
-                    Ziwang Wang, Huili Yan, <strong>Zhize Wu* (通讯作者)</strong>. 
-                    <span class="text-dark"><i>IEEE Transactions on Network and Service Management</i></span>, vol. 22, no. 6, pp. 5517-5531, Dec. 2025. 
-                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle ms-1">SCI</span>
-                </p>
-                <div class="pub-links">
-                    <a href="assets/papers/TNSM_2025.pdf" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill px-3 py-1 me-2"><i class="fas fa-file-pdf me-1"></i>PDF</a>
-                </div>
-            </div>
-            
-            <div class="pub-item mb-3 border-bottom pb-3">
-                <h5 class="fw-bold mb-2">Local and global self-attention enhanced graph convolutional network for skeleton-based action recognition</h5>
-                <p class="mb-2 text-secondary">
-                    <strong>Zhize Wu</strong>, Yue Ding, Long Wan, et al. 
-                    <span class="text-dark"><i>Pattern Recognition</i></span>, 2025, 159: 111106. 
-                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle ms-1">SCI Q1</span>
-                    <span class="badge bg-info-subtle text-info border border-info-subtle ms-1">CAAI-A</span>
-                </p>
-                <div class="pub-links">
-                    <a href="assets/papers/PR_2025.pdf" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill px-3 py-1 me-2"><i class="fas fa-file-pdf me-1"></i>PDF</a>
-                </div>
-            </div>
-
-            <div class="pub-item mb-3 border-bottom pb-3">
-                <h5 class="fw-bold mb-2">SelfGCN: Graph Convolution Network With Self-Attention for Skeleton-Based Action Recognition</h5>
-                <p class="mb-2 text-secondary">
-                    <strong>Zhize Wu</strong>, Pengpeng Sun, Xin Chen, et al. 
-                    <span class="text-dark"><i>IEEE Transactions on Image Processing</i></span>, 2024, 33: 4391-4403. 
-                    <span class="badge bg-danger-subtle text-danger border border-danger-subtle ms-1">CCF-A</span>
-                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle ms-1">SCI Q1</span>
-                </p>
-                <div class="pub-links">
-                    <a href="assets/papers/TIP_2024.pdf" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill px-3 py-1 me-2"><i class="fas fa-file-pdf me-1"></i>PDF</a>
-                </div>
-            </div>
-
-            <div class="pub-item mb-3 border-bottom pb-3">
-                <h5 class="fw-bold mb-2">Frequency Fitness Assignment: Optimization without a Bias for Good Solutions can be Efficient</h5>
-                <p class="mb-2 text-secondary">
-                    Thomas Weise, <strong>Zhize Wu</strong>, Xinlu Li, et al. 
-                    <span class="text-dark"><i>IEEE Transactions on Evolutionary Computation</i></span>, 2023, 27(4): 980-992. 
-                    <span class="badge bg-info-subtle text-info border border-info-subtle ms-1">CAAI-A</span>
-                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle ms-1">SCI Q1</span>
-                </p>
-                <div class="pub-links">
-                    <a href="assets/papers/TEC_2023.pdf" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill px-3 py-1 me-2"><i class="fas fa-file-pdf me-1"></i>PDF</a>
-                </div>
-            </div>
-
-             <div class="pub-item mb-3 border-bottom pb-3">
-                <h5 class="fw-bold mb-2">Hierarchical Fusion and Divergent Activation based Weakly Supervised Learning for Object Detection from Remote Sensing Images</h5>
-                <p class="mb-2 text-secondary">
-                    <strong>Zhize Wu</strong>, Jian Xu, Yan Wang, et al. 
-                    <span class="text-dark"><i>Information Fusion</i></span>, 2022, 80: 23-43. 
-                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle ms-1">SCI Q1</span>
-                    <span class="badge bg-info-subtle text-info border border-info-subtle ms-1">CAAI-A</span>
-                </p>
-                <div class="pub-links">
-                    <a href="assets/papers/InfoFusion_2022.pdf" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill px-3 py-1 me-2"><i class="fas fa-file-pdf me-1"></i>PDF</a>
-                </div>
-            </div>
-
-            <div class="pub-item mb-3 border-bottom pb-3">
-                <h5 class="fw-bold mb-2">A New Benchmark for Household Garbage Image Recognition</h5>
-                <p class="mb-2 text-secondary">
-                    <strong>Zhize Wu</strong>, Huanyi Li, Xiaofeng Wang, et al. 
-                    <span class="text-dark"><i>Tsinghua Science and Technology</i></span>, 2022, 27(5): 793-803. 
-                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle ms-1">SCI Q1</span>
-                </p>
-                <div class="pub-links">
-                    <a href="assets/papers/Tsinghua_2022.pdf" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill px-3 py-1 me-2"><i class="fas fa-file-pdf me-1"></i>PDF</a>
-                </div>
-            </div>
-
-            <div class="pub-item mb-3 border-bottom pb-3">
-                <h5 class="fw-bold mb-2">Rotation-Aware Representation Learning for Remote Sensing Image Retrieval</h5>
-                <p class="mb-2 text-secondary">
-                    <strong>Zhize Wu</strong>, Chang Zou, Yan Wang, et al. 
-                    <span class="text-dark"><i>Information Science</i></span>, 2021, 572: 404-423. 
-                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle ms-1">SCI Q1</span>
-                </p>
-                <div class="pub-links">
-                    <a href="assets/papers/InfoSci_2021.pdf" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill px-3 py-1 me-2"><i class="fas fa-file-pdf me-1"></i>PDF</a>
-                </div>
-            </div>
-
-            <div class="pub-item mb-3 border-bottom pb-3">
-                <h5 class="fw-bold mb-2">Hierarchical Object Detection for Very High-resolution Satellite Images</h5>
-                <p class="mb-2 text-secondary">
-                    <strong>Zhize Wu</strong>, Xiaofeng Wang, Le Zou, et al. 
-                    <span class="text-dark"><i>Applied Soft Computing</i></span>, 2021, 114(Part A): 107885. 
-                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle ms-1">SCI Q1</span>
-                </p>
-                <div class="pub-links">
-                    <a href="assets/papers/ASC_2021.pdf" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill px-3 py-1 me-2"><i class="fas fa-file-pdf me-1"></i>PDF</a>
-                </div>
-            </div>
-
-            <div class="pub-item mb-3 border-bottom pb-3">
-                <h5 class="fw-bold mb-2">A Benchmark Data Set for Aircraft Type Recognition from Remote Sensing Images</h5>
-                <p class="mb-2 text-secondary">
-                    <strong>Zhize Wu</strong>, Shouhong Wan, Xiaofeng Wang, et al. 
-                    <span class="text-dark"><i>Applied Soft Computing</i></span>, 2020, 89: 106132. 
-                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle ms-1">SCI Q1</span>
-                </p>
-                <div class="pub-links">
-                    <a href="assets/papers/ASC_2020.pdf" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill px-3 py-1 me-2"><i class="fas fa-file-pdf me-1"></i>PDF</a>
-                </div>
-            </div>
-
-            <div class="pub-item mb-3 border-bottom pb-3">
-                <h5 class="fw-bold mb-2">Autoencoder-based feature learning from a 2D depth map and 3D skeleton for action recognition</h5>
-                <p class="mb-2 text-secondary">
-                    <strong>Zhize Wu</strong>, Shouhong Wan, Li Yan, et al. 
-                    <span class="text-dark"><i>Journal of Computers</i></span>, 2018, 29(4): 82-95. 
-                    <span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle ms-1">EI</span>
-                </p>
-                <div class="pub-links">
-                    <a href="assets/papers/JCP_2018.pdf" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill px-3 py-1 me-2"><i class="fas fa-file-pdf me-1"></i>PDF</a>
-                </div>
-            </div>
-
-            <div class="pub-item mb-3">
-                <h5 class="fw-bold mb-2">Replicable Self-Documenting Experiments with Arbitrary Search Spaces and Algorithms</h5>
-                <p class="mb-2 text-secondary">
-                    Thomas Weise, <strong>Zhize Wu</strong>. 
-                    <span class="text-dark"><i>GECCO Companion</i></span>, 2023: 1891-1899. 
-                    <span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle ms-1">EI</span>
-                    <span class="badge bg-dark-subtle text-dark border border-dark-subtle ms-1">CCF Recommended</span>
-                </p>
-                <div class="pub-links">
-                    <a href="assets/papers/GECCO_2023.pdf" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill px-3 py-1 me-2"><i class="fas fa-file-pdf me-1"></i>PDF</a>
-                </div>
-            </div>
-            
         </div>
-    </section>
+    </nav>
+
+    <div class="container py-5">
+        <div class="page-header">
+            <span>更新日期：2026年04月</span>
+            <h2 class="mt-2">2025级研究生</h2>
+        </div>
+        
+        <div class="row g-4">
+            
+            <div class="col-lg-6">
+                <div class="d-flex flex-column flex-sm-row align-items-center align-items-sm-start p-4 bg-white rounded-4 shadow-sm transition-hover h-100">
+                    <img src="assets/images/stu_fuyutao.jpg" alt="付余涛" class="rounded-3 shadow-sm mb-3 mb-sm-0 me-sm-4 flex-shrink-0" style="width: 120px; height: 160px; object-fit: cover; border: 3px solid #f8f9fa;">
+                    <div class="text-center text-sm-start d-flex flex-column h-100 flex-grow-1">
+                        <h4 class="fw-bold mb-1 text-dark">付余涛</h4>
+                        <p class="text-primary small mb-3 fw-medium">硕士研究生</p>
+                        <div class="info-item"><span class="info-label">电子邮箱：</span><span class="info-value">fuyutao@stu.hfuu.edu.cn</span></div>
+                        <div class="info-item"><span class="info-label">学生籍贯：</span><span class="info-value">安徽省安庆市宿松县</span></div>
+                        <div class="info-item"><span class="info-label">兴趣爱好：</span><span class="info-value">游泳</span></div>
+                        <div class="mt-auto"><div class="research-tag">研究方向：骨架对抗</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="d-flex flex-column flex-sm-row align-items-center align-items-sm-start p-4 bg-white rounded-4 shadow-sm transition-hover h-100">
+                    <img src="assets/images/stu_rongziyi.jpg" alt="荣子怡" class="rounded-3 shadow-sm mb-3 mb-sm-0 me-sm-4 flex-shrink-0" style="width: 120px; height: 160px; object-fit: cover; border: 3px solid #f8f9fa;">
+                    <div class="text-center text-sm-start d-flex flex-column h-100 flex-grow-1">
+                        <h4 class="fw-bold mb-1 text-dark">荣子怡</h4>
+                        <p class="text-primary small mb-3 fw-medium">硕士研究生</p>
+                        <div class="info-item"><span class="info-label">电子邮箱：</span><span class="info-value">rongzy015@163.com</span></div>
+                        <div class="info-item"><span class="info-label">学生籍贯：</span><span class="info-value">安徽省淮北市濉溪县</span></div>
+                        <div class="info-item"><span class="info-label">兴趣爱好：</span><span class="info-value">国粹对弈，打排球</span></div>
+                        <div class="mt-auto"><div class="research-tag">研究方向：无源域适应</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="d-flex flex-column flex-sm-row align-items-center align-items-sm-start p-4 bg-white rounded-4 shadow-sm transition-hover h-100">
+                    <img src="assets/images/stu_xiayuxuan.jpg" alt="夏雨萱" class="rounded-3 shadow-sm mb-3 mb-sm-0 me-sm-4 flex-shrink-0" style="width: 120px; height: 160px; object-fit: cover; border: 3px solid #f8f9fa;">
+                    <div class="text-center text-sm-start d-flex flex-column h-100 flex-grow-1">
+                        <h4 class="fw-bold mb-1 text-dark">夏雨萱</h4>
+                        <p class="text-primary small mb-3 fw-medium">硕士研究生</p>
+                        <div class="info-item"><span class="info-label">电子邮箱：</span><span class="info-value">17756223525@163.com</span></div>
+                        <div class="info-item"><span class="info-label">学生籍贯：</span><span class="info-value">安徽省芜湖市南陵县</span></div>
+                        <div class="info-item"><span class="info-label">兴趣爱好：</span><span class="info-value">运动</span></div>
+                        <div class="mt-auto"><div class="research-tag">研究方向：无源域适应</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="d-flex flex-column flex-sm-row align-items-center align-items-sm-start p-4 bg-white rounded-4 shadow-sm transition-hover h-100">
+                    <img src="assets/images/stu_yaojunhao.jpg" alt="姚俊豪" class="rounded-3 shadow-sm mb-3 mb-sm-0 me-sm-4 flex-shrink-0" style="width: 120px; height: 160px; object-fit: cover; border: 3px solid #f8f9fa;">
+                    <div class="text-center text-sm-start d-flex flex-column h-100 flex-grow-1">
+                        <h4 class="fw-bold mb-1 text-dark">姚俊豪</h4>
+                        <p class="text-primary small mb-3 fw-medium">硕士研究生</p>
+                        <div class="info-item"><span class="info-label">电子邮箱：</span><span class="info-value">junhaoyao200@gmail.com</span></div>
+                        <div class="info-item"><span class="info-label">学生籍贯：</span><span class="info-value">安徽省黄山市歙县</span></div>
+                        <div class="info-item"><span class="info-label">兴趣爱好：</span><span class="info-value">旅游</span></div>
+                        <div class="mt-auto"><div class="research-tag">研究方向：扩散攻击</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="d-flex flex-column flex-sm-row align-items-center align-items-sm-start p-4 bg-white rounded-4 shadow-sm transition-hover h-100">
+                    <img src="assets/images/stu_zhangjiayi.jpg" alt="章佳宜" class="rounded-3 shadow-sm mb-3 mb-sm-0 me-sm-4 flex-shrink-0" style="width: 120px; height: 160px; object-fit: cover; border: 3px solid #f8f9fa;">
+                    <div class="text-center text-sm-start d-flex flex-column h-100 flex-grow-1">
+                        <h4 class="fw-bold mb-1 text-dark">章佳宜</h4>
+                        <p class="text-primary small mb-3 fw-medium">硕士研究生</p>
+                        <div class="info-item"><span class="info-label">电子邮箱：</span><span class="info-value text-muted fst-italic">暂无</span></div>
+                        <div class="info-item"><span class="info-label">学生籍贯：</span><span class="info-value">安徽省安庆市桐城县</span></div>
+                        <div class="info-item"><span class="info-label">兴趣爱好：</span><span class="info-value">看书</span></div>
+                        <div class="mt-auto"><div class="research-tag">研究方向：无源域适应</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="d-flex flex-column flex-sm-row align-items-center align-items-sm-start p-4 bg-white rounded-4 shadow-sm transition-hover h-100">
+                    <img src="assets/images/stu_yinmengyu.jpg" alt="尹梦雨" class="rounded-3 shadow-sm mb-3 mb-sm-0 me-sm-4 flex-shrink-0" style="width: 120px; height: 160px; object-fit: cover; border: 3px solid #f8f9fa;">
+                    <div class="text-center text-sm-start d-flex flex-column h-100 flex-grow-1">
+                        <h4 class="fw-bold mb-1 text-dark">尹梦雨</h4>
+                        <p class="text-primary small mb-3 fw-medium">硕士研究生</p>
+                        <div class="info-item"><span class="info-label">电子邮箱：</span><span class="info-value">yin410420@163.com</span></div>
+                        <div class="info-item"><span class="info-label">学生籍贯：</span><span class="info-value">河南省周口市</span></div>
+                        <div class="info-item"><span class="info-label">兴趣爱好：</span><span class="info-value">品鉴美式</span></div>
+                        <div class="mt-auto"><div class="research-tag">研究方向：无源域适应</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="d-flex flex-column flex-sm-row align-items-center align-items-sm-start p-4 bg-white rounded-4 shadow-sm transition-hover h-100">
+                    <img src="assets/images/stu_wangpengsong.jpg" alt="王鹏松" class="rounded-3 shadow-sm mb-3 mb-sm-0 me-sm-4 flex-shrink-0" style="width: 120px; height: 160px; object-fit: cover; border: 3px solid #f8f9fa;">
+                    <div class="text-center text-sm-start d-flex flex-column h-100 flex-grow-1">
+                        <h4 class="fw-bold mb-1 text-dark">王鹏松</h4>
+                        <p class="text-primary small mb-3 fw-medium">硕士研究生</p>
+                        <div class="info-item"><span class="info-label">电子邮箱：</span><span class="info-value">pengsw@stu.hfuu.edu.cn</span></div>
+                        <div class="info-item"><span class="info-label">学生籍贯：</span><span class="info-value">安徽省合肥市</span></div>
+                        <div class="info-item"><span class="info-label">兴趣爱好：</span><span class="info-value">打篮球 健身</span></div>
+                        <div class="mt-auto"><div class="research-tag">研究方向：对抗攻击</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="d-flex flex-column flex-sm-row align-items-center align-items-sm-start p-4 bg-white rounded-4 shadow-sm transition-hover h-100">
+                    <img src="assets/images/stu_hongzhichen.jpg" alt="洪志陈" class="rounded-3 shadow-sm mb-3 mb-sm-0 me-sm-4 flex-shrink-0" style="width: 120px; height: 160px; object-fit: cover; border: 3px solid #f8f9fa;">
+                    <div class="text-center text-sm-start d-flex flex-column h-100 flex-grow-1">
+                        <h4 class="fw-bold mb-1 text-dark">洪志陈</h4>
+                        <p class="text-primary small mb-3 fw-medium">硕士研究生</p>
+                        <div class="info-item"><span class="info-label">电子邮箱：</span><span class="info-value">1532181357@qq.com</span></div>
+                        <div class="info-item"><span class="info-label">学生籍贯：</span><span class="info-value">安徽</span></div>
+                        <div class="info-item"><span class="info-label">兴趣爱好：</span><span class="info-value">听音乐</span></div>
+                        <div class="mt-auto"><div class="research-tag">研究方向：零样本检测</div></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="text-center">
+        <p class="small mb-0">&copy; 2026 Secure AI Team, Hefei University.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
